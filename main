@@ -1,0 +1,142 @@
+Domain Driven Design
+
+What is DDD? What issues it attempts to solve, what values does it provide, and what are the main principles of DDD?
+What are the main concerns of strategic modelling in DDD?
+What is the Concept map? What is the value of good domain boundaries?
+What are the context mapping patterns?
+Tactical modelling concepts and patterns.
+Domain Model Implementation patterns: domain model, transaction script, table module, active record, anemic domain model.
+
+_________________________________________________________________________________________________________________________
+
+Introduction to Software Architecture
+
+What is Software Architecture and why it is important?
+Common Software Architectural patterns and styles.
+Common types of Client/Server applications. Difference between Multi-Page and Single-Page Web Applications.
+Common structural patterns of Software Architecture.
+Data management design patterns: CRUD and CQRS. Principles, purposes, differences.
+Software Architecture definition principles and techniques.
+
+
+_________________________________________________________________________________________________________________________
+
+Software Architecture Styles
+
+Laws and characteristics of Software Architecture.
+Common fallacies about distributed Software Architecture.
+Principles of Monolith Software Architecture style.
+Principles of Pipeline Architecture style.
+Principles of Microkernel Architecture style.
+Principles of Service-Based Architecture style
+Principles of Event-Driven Architecture style.
+Differences between Broker and Mediator topologies in Event-Driven Architecture.
+When is hybrid event-driven architecture typically considered?
+What are the main principles of space-based architecture style?
+What are the main principles of microservices architecture style?
+What should be considered when selecting an architectural style?
+
+
+_________________________________________________________________________________________________________________________
+
+Software Modifiability
+
+How modifiability can be measured? What is coupling, cohesion, and connascence?
+General software design principles.
+What concerns are typically considered in software design? What is separation of concerns?
+What are the main principles of YAGNI?
+What are the main cohesion principles?
+What are the main coupling principles?
+What are the SOLID principles?
+
+
+_________________________________________________________________________________________________________________________
+Deployability
+
+What is the cloud computing model? What perspectives does it cover?
+What are the possible cloud deployment technology options?
+What is the difference between virtualization vs containerization?
+What are the common types of <Resource>-as-a-Service? What are the differences between them?
+What are the common cloud deployment models?
+What are the common deployability tactics?
+
+
+
+_________________________________________________________________________________________________________________________
+Integrability
+
+What are the common module/service integration styles?
+What is API? What different styles of API do you know?
+What is REST API? What properties does it possess? What are the REST API maturity levels?
+How to ensure asynchronicity in REST API design?
+What is message-based communication?
+What is the purpose of different messaging patterns? Provide some examples of messaging patterns?
+How sync/async APIs can be documented?
+
+
+
+_________________________________________________________________________________________________________________________
+Usability
+
+Common types of UI.
+UI/UX Design concepts and key principles.
+What are the usability heuristics? Provide some examples.
+What is the purpose of UX/UI design?
+What is information architecture? What value it provides?
+What are the main principles of MVC pattern?
+What common design patterns are used in UX/UI design?
+
+
+
+
+_________________________________________________________________________________________________________________________
+Security
+
+Definitions of security and privacy. Common security tactics.
+What are the common ways to implement authentication in Web Applications? What purpose do OAuth and OpenID serve for?
+Definition of Multi-Factor Authentication.
+Common authorization methods.
+Common security vulnerabilities and how to avoid them?
+
+
+
+_________________________________________________________________________________________________________________________
+
+Performance
+
+What is performance? What are the main principles of high-performance software design principles? What are the common performance tactics?
+What is rate-limiting? Common types of rate-limiting algorithms.
+What is caching? Common caching strategies.
+
+_________________________________________________________________________________________________________________________
+
+Availability
+
+Availability definitions: fault, error, failure. Types of faults.
+Definition of Highly Available architecture. Purpose and principles of load-balancing, data scalability, geographical diversity, and business continuity and disaster recovery.
+What does the CAP theorem define?
+
+
+
+_________________________________________________________________________________________________________________________
+Energy Efficiency
+
+Common energy efficiency tactics.
+
+
+
+_________________________________________________________________________________________________________________________
+Enterprise Architecture
+
+What is Enterprise Architecture?
+What are the main principles of The Zachman Framework? What are the rows and columns about?
+What is the TOGAF? What is considered as the core of TOGAF? What are the main differences between TOGAF and Zachman Framework?
+
+
+_________________________________________________________________________________________________________________________
+Legal, ethical, and social aspects of IS
+
+Software engineering code of conduct.
+
+
+
