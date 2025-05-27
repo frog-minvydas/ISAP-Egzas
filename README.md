@@ -18,7 +18,6 @@ Common structural patterns of Software Architecture.
 Data management design patterns: CRUD and CQRS. Principles, purposes, differences.
 Software Architecture definition principles and techniques.
 
-
 _________________________________________________________________________________________________________________________
 
 Software Architecture Styles
@@ -36,7 +35,6 @@ What are the main principles of space-based architecture style?
 What are the main principles of microservices architecture style?
 What should be considered when selecting an architectural style?
 
-
 _________________________________________________________________________________________________________________________
 
 Software Modifiability
@@ -49,7 +47,6 @@ What are the main cohesion principles?
 What are the main coupling principles?
 What are the SOLID principles?
 
-
 _________________________________________________________________________________________________________________________
 Deployability
 
@@ -59,8 +56,6 @@ What is the difference between virtualization vs containerization?
 What are the common types of <Resource>-as-a-Service? What are the differences between them?
 What are the common cloud deployment models?
 What are the common deployability tactics?
-
-
 
 _________________________________________________________________________________________________________________________
 Integrability
@@ -73,8 +68,6 @@ What is message-based communication?
 What is the purpose of different messaging patterns? Provide some examples of messaging patterns?
 How sync/async APIs can be documented?
 
-
-
 _________________________________________________________________________________________________________________________
 Usability
 
@@ -86,9 +79,6 @@ What is information architecture? What value it provides?
 What are the main principles of MVC pattern?
 What common design patterns are used in UX/UI design?
 
-
-
-
 _________________________________________________________________________________________________________________________
 Security
 
@@ -97,8 +87,6 @@ What are the common ways to implement authentication in Web Applications? What p
 Definition of Multi-Factor Authentication.
 Common authorization methods.
 Common security vulnerabilities and how to avoid them?
-
-
 
 _________________________________________________________________________________________________________________________
 
@@ -116,14 +104,10 @@ Availability definitions: fault, error, failure. Types of faults.
 Definition of Highly Available architecture. Purpose and principles of load-balancing, data scalability, geographical diversity, and business continuity and disaster recovery.
 What does the CAP theorem define?
 
-
-
 _________________________________________________________________________________________________________________________
 Energy Efficiency
 
 Common energy efficiency tactics.
-
-
 
 _________________________________________________________________________________________________________________________
 Enterprise Architecture
@@ -131,7 +115,6 @@ Enterprise Architecture
 What is Enterprise Architecture?
 What are the main principles of The Zachman Framework? What are the rows and columns about?
 What is the TOGAF? What is considered as the core of TOGAF? What are the main differences between TOGAF and Zachman Framework?
-
 
 _________________________________________________________________________________________________________________________
 Legal, ethical, and social aspects of IS
