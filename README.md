@@ -1,6 +1,44 @@
-Domain Driven Design
+**Domain Driven Design**
 
-What is DDD? What issues it attempts to solve, what values does it provide, and what are the main principles of DDD?
+**<h4>What is DDD? What issues it attempts to solve, what values does it provide, and what are the main principles of DDD?</h4>**
+
+Domain Driven Design – an approach to software development enabling teams to more effectively manage the construction and maintenance of software for complex problem domains!
+
+Solves issues:
+cost centric vs profit centric view on development process
+solving problems using technology rather than careful thought and design
+database is given too much priority
+improper naming of objects and operations
+too fast delivery -> lower quality -> big ball of mud
+business logic in user interface components and persistence components
+broken, slow, and locking database queries 
+wrong abstractions
+strongly coupled services
+
+Values:
+
+domain model
+precise definition and understanding of the business is developed
+domain experts contribute to software design 
+better user experience is gained 
+clean boundaries are placed around pure models 
+Enterprise Architecture is better organized
+Agile, Iterative, Continuous modelling
+new tools, both Strategic and Tactical, are employed
+
+Principles:
+
+Exploration and experimentation
+Challenging assumptions
+Continuously modelling
+No wrong models – practice
+Flexible code aids discovery
+Problem solver first, technologist second
+Don’t solve all the problems
+Good is good enough
+
+
+
 What are the main concerns of strategic modelling in DDD?
 What is the Concept map? What is the value of good domain boundaries?
 What are the context mapping patterns?
@@ -9,18 +47,18 @@ Domain Model Implementation patterns: domain model, transaction script, table mo
 
 _________________________________________________________________________________________________________________________
 
-Introduction to Software Architecture
+**Introduction to Software Architecture**
 
-What is Software Architecture and why it is important?
-Common Software Architectural patterns and styles.
-Common types of Client/Server applications. Difference between Multi-Page and Single-Page Web Applications.
-Common structural patterns of Software Architecture.
-Data management design patterns: CRUD and CQRS. Principles, purposes, differences.
-Software Architecture definition principles and techniques.
+**<h4>What is Software Architecture and why it is important?</h4>**
+**<h4>Common Software Architectural patterns and styles.</h4>**
+**<h4>Common types of Client/Server applications. Difference between Multi-Page and Single-Page Web Applications.</h4>**
+**<h4>Common structural patterns of Software Architecture.</h4>**
+**<h4>Data management design patterns: CRUD and CQRS. Principles, purposes, differences.</h4>**
+**<h4>Software Architecture definition principles and techniques.</h4>**
 
 _________________________________________________________________________________________________________________________
 
-Software Architecture Styles
+**Software Architecture Styles**
 
 Laws and characteristics of Software Architecture.
 Common fallacies about distributed Software Architecture.
@@ -37,7 +75,7 @@ What should be considered when selecting an architectural style?
 
 _________________________________________________________________________________________________________________________
 
-Software Modifiability
+**Software Modifiability**
 
 How modifiability can be measured? What is coupling, cohesion, and connascence?
 General software design principles.
@@ -48,7 +86,7 @@ What are the main coupling principles?
 What are the SOLID principles?
 
 _________________________________________________________________________________________________________________________
-Deployability
+**Deployability**
 
 What is the cloud computing model? What perspectives does it cover?
 What are the possible cloud deployment technology options?
@@ -58,7 +96,7 @@ What are the common cloud deployment models?
 What are the common deployability tactics?
 
 _________________________________________________________________________________________________________________________
-Integrability
+**Integrability**
 
 What are the common module/service integration styles?
 What is API? What different styles of API do you know?
@@ -69,7 +107,7 @@ What is the purpose of different messaging patterns? Provide some examples of me
 How sync/async APIs can be documented?
 
 _________________________________________________________________________________________________________________________
-Usability
+**Usability**
 
 Common types of UI.
 UI/UX Design concepts and key principles.
@@ -80,7 +118,7 @@ What are the main principles of MVC pattern?
 What common design patterns are used in UX/UI design?
 
 _________________________________________________________________________________________________________________________
-Security
+**Security**
 
 Definitions of security and privacy. Common security tactics.
 What are the common ways to implement authentication in Web Applications? What purpose do OAuth and OpenID serve for?
@@ -90,7 +128,7 @@ Common security vulnerabilities and how to avoid them?
 
 _________________________________________________________________________________________________________________________
 
-Performance
+**Performance**
 
 What is performance? What are the main principles of high-performance software design principles? What are the common performance tactics?
 What is rate-limiting? Common types of rate-limiting algorithms.
@@ -98,25 +136,25 @@ What is caching? Common caching strategies.
 
 _________________________________________________________________________________________________________________________
 
-Availability
+**Availability**
 
 Availability definitions: fault, error, failure. Types of faults.
 Definition of Highly Available architecture. Purpose and principles of load-balancing, data scalability, geographical diversity, and business continuity and disaster recovery.
 What does the CAP theorem define?
 
 _________________________________________________________________________________________________________________________
-Energy Efficiency
+**Energy Efficiency**
 
 Common energy efficiency tactics.
 
 _________________________________________________________________________________________________________________________
-Enterprise Architecture
+**Enterprise Architecture**
 
 What is Enterprise Architecture?
 What are the main principles of The Zachman Framework? What are the rows and columns about?
 What is the TOGAF? What is considered as the core of TOGAF? What are the main differences between TOGAF and Zachman Framework?
 
 _________________________________________________________________________________________________________________________
-Legal, ethical, and social aspects of IS
+**Legal, ethical, and social aspects of IS**
 
 Software engineering code of conduct.
