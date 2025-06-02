@@ -39,11 +39,11 @@ Good is good enough
 
 
 
-What are the main concerns of strategic modelling in DDD?
-What is the Concept map? What is the value of good domain boundaries?
-What are the context mapping patterns?
-Tactical modelling concepts and patterns.
-Domain Model Implementation patterns: domain model, transaction script, table module, active record, anemic domain model.
+**<h4>What are the main concerns of strategic modelling in DDD?</h4>**
+**<h4>What is the Concept map? What is the value of good domain boundaries?</h4>**
+**<h4>What are the context mapping patterns?</h4>**
+**<h4>Tactical modelling concepts and patterns.</h4>**
+**<h4>Domain Model Implementation patterns: domain model, transaction script, table module, active record, anemic domain model.</h4>**
 
 _________________________________________________________________________________________________________________________
 **<h1>Introduction to Software Architecture</h1>**
