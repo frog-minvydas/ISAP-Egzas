@@ -318,11 +318,44 @@ Help and documentation \
 
 <h4><strong>What Is the Purpose of UX/UI Design?</strong></h4>
 
+🎯 Design should ensure effective operation and control of the system and deliver the best  experience for the user.  \
+🧠 UX Design — The WHY \
+Focuses on strategy, structure, and purpose \
+Plans how the product will solve real user problems \
+Guided by research, user needs, and business goals \
+🎨 UI Design — The HOW \
+Focuses on visuals, interactivity, and accessibility \
+Brings UX plans to life through layout, colors, and components \
+Ensures consistency, clarity, and responsiveness in the interface \
+
+
 <h4><strong>What Is Information Architecture? What Value It Provides?</strong></h4>
+📦 IA defines the full structure of a product, helping users find what they need with clarity and ease.  \
+🎯 Main Goal  \
+Organize and classify content so users can navigate efficiently and understand the structure.  \
+
+📐 Common IA Patterns:  \
+🔽 Hierarchical — From most to least important  \
+➡️ Sequential — Step-by-step, ordered flow  \
+🔲 Matrix — User decides how to navigate  \
+🔤 Alphabetical — A to Z arrangement  \
+🔗 By Relation — Based on roles and relationships  \
 
 <h4><strong>What Are the Main Principles of MVC Pattern?</strong></h4>
+<p><strong>Model:</strong><br>
+represents the state of the application and any business logic or operations that should be performed by it. Business logic should be encapsulated in the model, along with any implementation logic for persisting the state of the application.</p>
 
-<h4><strong>What Common Design Patterns Are Used in UX/UI Design?</strong></h4>
+<p><strong>Views:</strong><br>
+are responsible for presenting content through the user interface. They use a particular view engine to embed application code in HTML markup. There should be minimal logic within views, and any logic in them should relate to presenting content.</p>
+
+<p><strong>Controllers:</strong><br>
+are the components that handle user interaction, work with the model, and ultimately select a view to render. In an MVC application, the view only displays information; the controller handles and responds to user input and interaction.</p>
+
+
+<h4><strong>What Common Design Patterns Are Used in UX/UI Design?</strong></h4> <p><strong>Command</strong> 
+is a behavioral design pattern that turns a request into a stand-alone object that contains all information about the request. This transformation lets you pass requests as a method arguments, delay or queue a request’s execution, and support undoable operations.</p> <p><strong>Mediator</strong> is a behavioral design pattern that lets you reduce chaotic dependencies between objects. The pattern restricts direct communications between the objects and forces them to collaborate only via a mediator object.</p> <p><strong>The memento pattern</strong> is a common way to implement the undo tactic. This pattern features three major components: the originator, the caretaker, and the memento. The originator is processing some stream of events that change its state (originating from user interaction). The caretaker is sending events to the originator that cause it to change its state. When the caretaker is about to change the state of the originator, it can request a memento—a snapshot of the existing state—and can use this artifact to restore that existing state if needed, by simply passing the memento back to the originator. In this way, the caretaker knows nothing about how state is managed; the memento is simply an abstraction that the caretaker employs.</p> <p><strong>Observer</strong> is a behavioral design pattern that lets you define a subscription mechanism to notify multiple objects about any events that happen to the object they’re observing. The pattern is a way to link some functionality with one or more views. This pattern has a subject—the entity being observed—and one or more observers of that subject. Observers registers with the Subject; When the State of the Subject changes, the Observers are notified. Pattern is often used to implement MVC (and its variants).</p> <p><strong>Chain of Responsibility</strong> is a behavioral design pattern that lets you pass requests along a chain of handlers. Upon receiving a request, each handler decides either to process the request or to pass it to the next handler in the chain.</p> <p><strong>State</strong> is a behavioral design pattern that lets an object alter its behavior when its internal state changes. It appears as if the object changed its class.</p>
+
+
 
 
 _________________________________________________________________________________________________________________________
