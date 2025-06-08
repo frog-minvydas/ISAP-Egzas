@@ -895,10 +895,146 @@ ________________________________________________________________________________
 **<h1>Enterprise Architecture</h1>**
 
 <h4><strong>What Is Enterprise Architecture?</strong></h4>
+## What is Enterprise Architecture?
+
+- **The integrated blueprint of the enterprise:**  
+  - A collection of special documents (artifacts) describing various aspects of an organization from an integrated business and IT perspective, intended to bridge the communication gap between business and IT stakeholders.
+
+- **A rigorous model** consisting of:  
+  - Motivations, structures, information, processes, and systems of an enterprise created for the purpose of decision support.
+
+- **A plan for the fundamental structure** of systems:  
+  - Which comprise and support the enterprise together with the context of those systems and the principles governing their development and evolution.
+
+- **A process of analyzing, assessing and documenting:**  
+  - The context & environment of the systems, researching options, and making decisions for the systems components, structures & principles.
+
+- **Enterprise architecture drives to standardization**, which in turn **drives to commercialization**:
+  - *Lower run-the-engine (RTE)* costs
+  - *Faster rollout of a function*, whether this is an atomic function (e.g., configure a server, configure a storage partition) or a more complex integrated function (e.g., new software application).
+ 
+## Why Enterprise Architecture?
+
+1. Unreliable enterprise information  
+2. Untimely enterprise information  
+3. New complex projects  
+4. Acquisitions of new companies  
+5. Business unit selling plans  
+6. Identification of outsourcing opportunities  
+7. Compliance with regulatory requirements  
+8. Automation of relationships with partners  
+9. Automation of relationships with customers  
+10. IT--Business Unit relationship issues  
+11. Interoperability challenges of IT systems  
+12. Unmanageable IT systems
 
 <h4><strong>What Are the Main Principles of The Zachman Framework? What Are the Rows and Columns About?</strong></h4>
+## The Zachman Framework
+
+- The Zachman Framework is an **enterprise ontology** and is a **fundamental structure** for enterprise architecture which provides a formal and structured way of viewing and defining an enterprise.
+
+- The ontology is a **two-dimensional classification schema**:
+  - **Aspects:** What, How, When, Who, Where, and Why  
+  - **Perspectives:**  
+    - Executive (*Planner*)  
+    - Business Manager (*Owner*)  
+    - Architect (*Designer*)  
+    - Engineer (*Builder*)  
+    - Technician (*Implementer*)  
+    - Enterprise (*Operator*)
+
+- The Framework **IS NOT a methodology** for creating the implementation (an instantiation) of the object.  
+  ➝ It is about a **structure**, not a **process**.
+
+## The Framework as a Classification Structure
+
+The Framework is the product of many years of research and experience (from the late 80s), finding words and graphic concepts to represent and convey the classification logic as precisely as possible.
+
+---
+
+### Zachman defines 7 rules for using the framework:
+
+1. **Do Not Add Rows or Columns** to the Framework  
+2. **Each Column Has a Simple Generic Model**  
+3. **Each Cell Model Specializes Its Column’s Generic Model**  
+4. **No Meta Concept Can Be Classified Into More than One Cell**  
+5. **Do Not Create Diagonal Relationships Between Cells**  
+6. **Do Not Change the Names** of the Rows or Columns  
+7. **The Logic is Generic, Recursive**
+
+---
+
+### Perspectives (Rows):
+
+- **Planner** – *Executive Perspective*  
+- **Owner** – *Business Manager Perspective*  
+- **Designer** – *Architect Perspective*  
+- **Builder** – *Engineer Perspective*  
+- **Implementer** – *Technician Perspective*  
+- **Operator** – *The Enterprise (Functioning System)*
+
+---
+
+### Aspects (Columns):
+
+- **What** – Material  
+- **How** – Process  
+- **Where** – Geometry  
+- **Who** – Instructions  
+- **When** – Timing  
+- **Why** – Objectives
 
 <h4><strong>What Is the TOGAF? What Is Considered as the Core of TOGAF? What Are the Main Differences Between TOGAF and Zachman Framework?</strong></h4>
+Viewed as an architectural process, TOGAF complements Zachman, which is categorized as an architectural taxonomy. 
+![image](https://github.com/user-attachments/assets/78281eec-7205-41ea-ad7d-b384950391b9)
+
+## TOGAF & The Architecture Development Method (ADM)
+
+The most important part of **TOGAF** is the **Architecture Development Method (ADM)**.  
+ADM is a *recipe* for creating an architecture — and a recipe can be categorized as a *process*.
+
+---
+
+### ADM Phases
+
+- **Preliminary Phase:**  
+  Preparation, initiation, and customization
+
+- **Phase A: Architecture Vision**  
+  Initiative scope, identification of key stakeholders, creation of the architecture vision, and buy-in from stakeholders
+
+- **Phase B: Business Architecture**  
+  Business workflow and strategy changes needed to support the architecture vision. Describes the processes the business uses to meet its goals.
+
+- **Phase C: Information Systems Architecture**  
+  Logical and physical data model changes needed to support the architecture vision. Describes how specific applications are designed and how they interact.
+
+- **Phase D: Technology Architecture**  
+  Hardware, software, platforms, and infrastructure changes needed to support the architecture vision
+
+- **Phase E: Opportunities & Solutions**  
+  Create roadmap showing the iterations and projects required to satisfy the architecture vision
+
+- **Phase F: Migration Planning**  
+  Identify business value for each iteration and sort/ prioritize projects based on dependencies, cost, benefit, and risks
+
+- **Phase G: Implementation Governance**  
+  Defines acceptance criteria and outstanding issues; ensures alignment between implementation and architecture vision
+
+- **Phase H: Architecture Change Management**  
+  Governs and measures change during implementation of the architecture vision and roadmap; identifies and manages risks
+
+---
+
+### TOGAF vs Zachman
+
+- TOGAF is an **architectural process**  
+- Zachman is an **architectural taxonomy**
+
+➡️ *Zachman tells you how to categorize your artifacts.  
+TOGAF gives you a process for creating them.*
+
+
 
 
 _________________________________________________________________________________________________________________________
@@ -906,6 +1042,36 @@ ________________________________________________________________________________
 
 <h4><strong>Software Engineering Code of Conduct</strong></h4>
 
+## SWE Code of Conduct Principles
+
+### Be impartial
+The good of the general public is equally important to the good of your organization or company. The good of your profession and your company are equally important to your personal good. It is wrong to promote your agenda at the expense of your firm, and it is wrong to promote the interests of your firm at the expense of society.
+
+### Disclose information that others ought to know
+- Do not let others come to harm by concealing information from them.  
+- Do not make misleading or deceptive statements.  
+- Disclose potential conflicts of interest.
+
+### Respect the rights of others
+Do not infringe on the privacy rights, property rights, or intellectual property rights of others.
+
+### Treat others justly
+Everyone deserves fair wages and appropriate credit for work performed. Do not discriminate against others for attributes unrelated to the job they do. Do not penalize others for following the Code.
+
+### Take responsibility for your actions and inactions
+As a moral agent, you are responsible for the things you do, both good and bad. You may also be responsible for bad things that you allow to happen through your inaction.
+
+### Take responsibility for the actions of those you supervise
+Managers are responsible for setting up work assignments and training opportunities to promote quality and reduce risk. They should create effective communication channels with subordinates so that they can monitor the work being done and be aware of any quality or risk issues that arise.
+
+### Maintain your integrity
+Deliver on your commitments and be loyal to your employer, while obeying the law. Do not ask someone else to do something you would not be willing to do yourself.
+
+### Continually improve your abilities
+Take advantage of opportunities to improve your software engineering skills and your ability to put the Code to use.
+
+### Share your knowledge, expertise, and values
+Volunteer your time and skills to worthy causes. Help bring others to your level of knowledge about software engineering and professional ethics.
 
 
 ![image](https://github.com/user-attachments/assets/2f2dcd51-1666-4253-930a-653b98ae91db)
