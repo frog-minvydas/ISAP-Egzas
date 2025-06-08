@@ -731,11 +731,123 @@ ________________________________________________________________________________
 **<h1>Availability</h1>**
 
 <h4><strong>Availability Definitions: Fault, Error, Failure. Types of Faults.</strong></h4>
+- **Availability** – software is there and ready to carry out its task when needed.
+
+- **Availability = reliability + recovery** (when the system breaks, it repairs itself)
+  - A *fault* is an unexpected or abnormal behavior in a system component that can lead to an error or failure.
+  - An *error* is an erroneous state of the system that results from faults.
+  - A *failure* defines an event where a system can’t deliver a service or accomplish its intended purpose. It’s a visible result of an error.
+
+## Types of Faults
+
+Faults can be categorized based on:
+
+### 1. **Frequency of Appearance**
+- **Transient** – Occurs once and disappears (e.g., temporary power loss).
+- **Intermittent** – Occurs occasionally and unpredictably (e.g., loose connection).
+- **Permanent** – Consistent and reproducible (e.g., hardware failure).
+
+### 2. **Root Causes**
+- **Hardware** – Faults due to physical components (e.g., disk crash).
+- **Software** – Bugs or misconfigurations in code or logic.
+- **Human-error** – Mistakes made by users or administrators (e.g., misconfigured firewall).
+- **Non Human-error** – Automatic system actions that result in faults (e.g., auto-scaling misbehaving).
+- **Environmental** – External factors like power outages, temperature spikes, or natural disasters.
 
 <h4><strong>Definition of Highly Available Architecture. Purpose and Principles of Load-Balancing, Data Scalability, Geographical Diversity, and Business Continuity and Disaster Recovery.</strong></h4>
+## Highly Available Architecture
+
+- **Load Balancing**  
+  Distribute traffic across nodes with a pre-defined failover strategy for node failures.
+
+- **Data Scalability**  
+  Scale databases via replication or partitioning or allow each instance to manage its own data.
+
+- **Geographical Diversity**  
+  Deploy clusters across regions to ensure resilience against local outages or disasters.
+
+- **Backup & Recovery**  
+  Plan for full system recovery using a clear backup strategy (e.g., 3–2–3 rule: 3 copies, 2 media, 3 locations).
+
+## Load Balancing
+
+- **Definition:**  
+  - Distributes client requests across multiple service instances to ensure reliability and performance.
+
+- **Static:**
+  - Round Robin  
+  - Sticky Round Robin  
+  - Weighted Round Robin
+
+- **Dynamic:**
+  - Least Connections  
+  - Least Response Time
+
+Scalability:
+## Sharding vs Replication
+
+- **Sharding:**  
+  A large dataset is split into smaller chunks (*shards*) distributed across multiple databases.  
+  It’s a horizontal scaling solution that increases the number of database instances in a system.
+
+- **Replication:**  
+  Identical copies of a database are created on additional machines.
+
+## Geographical Diversity & Availability Zones
+
+- **Availability Zones (AZs)**  
+  - Located within a region, AZs offer low-latency interconnects but are isolated enough to avoid shared failure risks.
+
+- **Infra Independence**  
+  - Each AZ has its own power, cooling, and networking, ensuring fault isolation.
+
+- **High Availability**  
+  - If one AZ fails, others can maintain regional service continuity and capacity.
+
+## Business Continuity and Disaster Recovery
+
+Disaster recovery measures are strategies and procedures that organizations put in place to ensure that they can recover from natural or man-made disasters that could disrupt their normal operations.
+
+**The goal of disaster recovery** is to minimize the impact of a disaster on an organization’s ability to function and to restore normal operations as quickly as possible.
+
+---
+
+### Key Metrics
+
+1. **Recovery Time Objectives (RTO):**  
+   Maximum acceptable length of time that the resource can be down.
+
+2. **Recovery Point Objectives (RPO):**  
+   Maximum age of the data that can be lost.
+
+3. **The number of plans** that cover each *critical business process*.
+
+4. **The amount of time** since each plan was updated.
+
+5. **The number of business processes** that are threatened by a potential disaster.
+
+6. **The actual time** it takes to recover a business process.
+
+7. **The difference** between *target* and *actual* recovery time.
 
 <h4><strong>What Does the CAP Theorem Define?</strong></h4>
 
+## CAP Theorem
+
+A distributed system **cannot simultaneously guarantee**:
+
+- **Consistency (C)** – Every node returns the most recent data.
+- **Availability (A)** – Every request gets a non-error response.
+- **Partition Tolerance (P)** – The system continues to operate despite network splits.
+
+---
+
+### In the event of a network partition (P), a system must choose either:
+
+- **Consistency (C)** → Reject requests to avoid stale data.
+- **Availability (A)** → Respond with possibly outdated data.
+
+➡️ *You can only choose two of the three (C, A, P).*
 
 _________________________________________________________________________________________________________________________
 **<h1>Energy Efficiency</h1>**
