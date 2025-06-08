@@ -853,6 +853,42 @@ ________________________________________________________________________________
 **<h1>Energy Efficiency</h1>**
 
 <h4><strong>Common Energy Efficiency Tactics</strong></h4>
+## Energy Efficiency Tactics
+
+### Objectives:
+- Conserve or manage energy while maintaining the required functionality.
+
+---
+
+### Monitor Resources
+- Track usage to identify inefficiencies.
+
+### Allocate Resources Wisely
+- Use only what’s needed—scale up/down based on demand.
+
+### Reduce Demand
+- Optimize code, batch workloads, and offload non-critical tasks.
+
+---
+
+### Tactic Tree (Summary)
+**Monitor Resources**
+- Metering  
+- Static Classification  
+- Dynamic Classification
+
+**Allocate Resources**
+- Reduce Usage  
+- Discovery  
+- Schedule Resources
+
+**Reduce Resource Demand**
+- Manage Event Arrival  
+- Limit Event Response  
+- Prioritize Events  
+- Reduce Computational Overhead  
+- Bound Execution Times  
+- Increase Resource Usage Efficiency
 
 
 _________________________________________________________________________________________________________________________
