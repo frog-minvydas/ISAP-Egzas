@@ -44,11 +44,88 @@ Bounded context, Ubiquitous language, context map, concrete view
 
 **<h4>What is the Concept map? What is the value of good domain boundaries?</h4>**
 
+Good domain boundaries contribute to many organizational and technical improvements.
+As shown in figure, looser coupling results in fewer dependencies and
+faster flow—and, from personal experience, much happier teams. Cohesive boundaries
+that group related concepts lead to a clearer sense of purpose, aligning and motivating
+teams and incentivizing sustainable practices. Cohesion also makes it easier to
+learn the domain, in turn helping teams go beyond coding to contributing product
+and domain innovations.
+
+Context map - global view of bounded contexts
+overlap between project management and software design
+does not have to be documented in any form; yet it needs to be understood and agreed.
+
+Domain Types:
+Core Domain
+Supporting Domain
+Generic Domain
+Bounded Contexts:
+Internal
+External
+
 **<h4>What are the context mapping patterns?</h4>**
+
+Shared kernel
+Partnership
+Customer/Supplier
+Anticorruption Layer
+Open Host Service
+Even Publisher
+Published Language
+Separate ways
+Conformist
+
+
 
 **<h4>Tactical modelling concepts and patterns.</h4>**
 
+Aggregate
+A cluster of associated objects that are treated as a unit for the purpose of data changes.
+External references are restricted to one member of the aggregate, designated as the root.
+A set of consistency rules applies within the aggregate boundaries.
+Entity
+An object fundamentally defined not by its attributes, but by a thread of continuity and identity.
+Value Object
+An object that describes some characteristic or attribute but carries no concept of identity.
+Whole Value
+An object that models a single, complete concept.
+Repository
+A mechanism for encapsulating storage, retrieval, and search behavior which emulates a collection of objects.
+Service
+An operation offered as an interface that stands alone in the model, with no encapsulated state.
+Factory
+A mechanism for encapsulating complex creation logic and abstracting the type of a created object for the sake of a client.
+
+
 **<h4>Domain Model Implementation patterns: domain model, transaction script, table module, active record, anemic domain model.</h4>**
+
+Domain model
+The domain model pattern is based on the premise that there is no database
+Model‐driven as opposed to data‐driven design
+
+Transaction script
+Follows a procedural style of development rather than an object‐oriented approach
+Single procedure is created for a business transaction; grouped in a static manager or service class
+Each procedure contains all the business logic that is required to complete the business transaction
+from the workflow, business rules, and validation checks 
+to persistence in the database
+
+Table Module
+A single object represents a table or view in the database. 
+The object is responsible for all persistence needs along with business logic behavior. 
+Good fit for simpler parts of the domain that are isolated by a bounded context and that are simply forms over data. 
+If the object model and database model start to diverge, then refactor toward the domain model pattern.
+
+Active record
+An object that wraps a row in a database table or view, encapsulates the database access, and adds domain logic on that data.
+
+Anemic domain model
+Anemic domain model – anti-pattern: domain objects lack significant business logic.
+Business logic resides outside the model, leaving domain objects as mere data transfer classes.
+Violation of the "Tell, Don’t Ask" principle; objects should communicate capabilities instead of exposing properties for client determination.
+Suitable for parts of domain models with minimal logic or teams less experienced in object-oriented programming.
+Can integrate with the Ubiquitous Language (UL) and serve as a preliminary step toward a richer domain model.
 
 _________________________________________________________________________________________________________________________
 **<h1>Introduction to Software Architecture</h1>**
