@@ -545,11 +545,187 @@ ________________________________________________________________________________
 **<h1>Performance</h1>**
 
 <h4><strong>What Is Performance? What Are the Main Principles of High-Performance Software Design? What Are the Common Performance Tactics?</strong></h4>
+Performance is about time and software system’s ability to meet timing requirements.
+
+1. **Efficient Algorithms and Data Structures**  
+   Use time- and space-efficient solutions to reduce complexity and improve responsiveness.
+
+2. **Concurrency and Parallelism**  
+   Leverage multi-threading, async I/O, and parallel processing to maximize CPU utilization.
+
+3. **Caching**  
+   Store frequently accessed data in memory to reduce computation and latency.
+
+4. **Minimize I/O Operations**  
+   Reduce disk, network, and DB I/O where possible.  
+   Use batch operations and lazy loading.
+
+5. **Optimized Resource Management**  
+   Efficiently manage memory, threads, and network connections. Avoid resource leaks.
+
+6. **Horizontal and Vertical Scaling**  
+   Design for scale-out (adding nodes) and scale-up (more powerful hardware).
+
+7. **Load Balancing**  
+   Distribute traffic evenly across services or nodes to prevent overload and ensure availability.
+
+8. **Fault Tolerance and Resilience**  
+   Use retries, circuit breakers, redundancy, and graceful degradation to handle failures.
+
+9. **Performance Monitoring and Optimization**  
+   Use profiling, tracing, and metrics to identify and resolve bottlenecks proactively.
+
+10. **Lean and Modular Architecture**  
+   Keep components small, cohesive, and loosely coupled for agility and better maintainability.
+
+## Performance Tactics
+
+The goal of performance tactics is to *generate a response to events arriving at the system under some time-based or resource-based constraint*.
+
+### Control Resource Demand
+- Manage Work Requests  
+- Limit Event Response  
+- Prioritize Events  
+- Reduce Computational Overhead  
+- Bound Execution Times  
+- Increase Efficiency  
+
+➡️ Reduce or smooth load through caching, load shedding, or limiting user input.
+
+### Manage Resources
+- Increase Resources  
+- Introduce Concurrency  
+- Maintain Multiple Copies of Computations  
+- Maintain Multiple Copies of Data  
+- Bound Queue Sizes  
+- Schedule Resources  
+
+➡️ Allocate CPU, memory, and I/O wisely using prioritization, pooling, and concurrency control.
 
 <h4><strong>What Is Rate-Limiting? Common Types of Rate-Limiting Algorithms.</strong></h4>
+Rate limiting controls the rate at which users or services can access a resource.
+
+## Rate-Limiting Algorithms
+
+Rate-limiting algorithms are essential tools that enable organizations to control and limit the rate of incoming requests to their applications and systems. Different algorithms can be used depending on the specific needs of the application or system.
+
+---
+
+### 1. **Token Bucket Rate Limiting**
+
+**How It Works:**
+- Tokens are added to a bucket at a steady rate (e.g., 1 token per second).
+- The bucket has a maximum capacity.
+- Each request removes one token.
+- If the bucket is empty, the request is rejected.
+
+**Benefits:**
+- Allows bursts of traffic.
+- Smooths out request rates over time.
+- Good for APIs with variable usage patterns.
+
+---
+
+### 2. **Leaky Bucket Rate Limiting**
+
+**How It Works:**
+- Requests enter a queue.
+- The queue is processed at a constant rate (like water leaking).
+- If the queue is full, new requests are rejected.
+
+**Benefits:**
+- Smooths out bursts.
+- Prevents overload.
+- Simple to implement.
+
+---
+
+### 3. **Fixed Window Counter**
+
+**How It Works:**
+- Track the number of requests in a fixed time window (e.g., 1 minute).
+- Reset the counter when the window expires.
+- Allow requests if the count is below the limit.
+
+**Benefits:**
+- Simple and efficient.
+- Good for DDoS protection.
+
+**Drawback:**
+- Can allow bursts at window boundaries.
+
+---
+
+### 4. **Sliding Log Algorithm**
+
+**How It Works:**
+- Store timestamps in a list.
+- Remove timestamps older than the time window.
+- Count the remaining timestamps.
+- Allow request if count < limit.
+
+**Benefits:**
+- Very accurate.
+- Flexible and fair.
+
+**Drawback:**
+- Memory-intensive for high traffic.
+
+---
+
+### 5. **Sliding Window Counter**
+
+**How It Works:**
+- Track counts for current and previous windows.
+- Calculate how far into the current window we are.
+- Estimate total requests using:
+
+  `estimatedCount = previousCount × (1 − fraction) + currentCount`
+
+- Allow request if estimated count < limit.
+
+**Benefits:**
+- Smooths out spikes.
+- More accurate than fixed window.
+- Less memory usage than sliding log.
 
 <h4><strong>What Is Caching? Common Caching Strategies.</strong></h4>
 
+## Caching
+
+Caching is the process of persisting frequently used data for a certain period of time to ensure its faster access and off-load work from the database.
+
+---
+
+### Cache Types
+
+- **Client-Side Caching**  
+  Data is stored on the client side. In the case of a web browser, this could be browser-specific caches.
+
+- **Network-Level Caching**  
+  Intermediate HTTP web servers and routers are configured to cache API calls and resources.
+
+- **Disk-Level Caching**  
+  Files are stored on disk and accessed by their name.
+
+- **In-Memory Caching**  
+  Files or data are stored in memory (RAM) for very fast access.
+
+- **Distributed Caching**  
+  A cache shared by multiple app servers, typically maintained as an external service (e.g., Redis, Memcached) accessed by all servers.
+
+---
+
+### HTTP Caching
+
+- **Private Cache**  
+  Tied to a specific client, typically a browser cache.  
+  Header example: `Cache-Control: private`
+
+- **Shared Cache**  
+  Located between the client and server; stores responses that can be shared among multiple users.  
+  Header controls:  
+  `Cache-Control: no-store, no-cache, max-age=0, must-revalidate, proxy-revalidate`
 
 _________________________________________________________________________________________________________________________
 **<h1>Availability</h1>**
