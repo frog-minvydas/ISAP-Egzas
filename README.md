@@ -1,4 +1,4 @@
-![image](https://github.com/user-attachments/assets/d6a914bf-1cf7-457d-9e59-7a7205ffb542)**<h1>Domain Driven Design</h1>**
+**<h1>Domain Driven Design</h1>**
 
 **<h4>What is DDD? What issues it attempts to solve, what values does it provide, and what are the main principles of DDD?</h4>**
 
