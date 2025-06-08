@@ -220,3 +220,14 @@ ________________________________________________________________________________
 
 <h4><strong>Software Engineering Code of Conduct</strong></h4>
 
+
+
+![image](https://github.com/user-attachments/assets/2f2dcd51-1666-4253-930a-653b98ae91db)
+
+![image](https://github.com/user-attachments/assets/917b4d22-944a-4835-9baa-9cf7d80d4c51)
+
+![image](https://github.com/user-attachments/assets/8800421c-fe3f-4ba1-a97a-2054d64cb108)
+
+
+
+
