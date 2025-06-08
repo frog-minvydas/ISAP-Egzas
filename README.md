@@ -1,4 +1,4 @@
-**<h1>Domain Driven Design</h1>**
+![image](https://github.com/user-attachments/assets/d6a914bf-1cf7-457d-9e59-7a7205ffb542)**<h1>Domain Driven Design</h1>**
 
 **<h4>What is DDD? What issues it attempts to solve, what values does it provide, and what are the main principles of DDD?</h4>**
 
@@ -229,9 +229,92 @@ ________________________________________________________________________________
 
 <h4><strong>Common Types of UI</strong></h4>
 
+⌨️ Command Line Interface (CLI) \
+🖼️ Graphical User Interface (GUI) \
+📜 Menu-Driven UI \
+📝 Forms-Based UI \
+📊 Analytical UI \
+💬 Chat-Based UI \
+🗣️ Natural Language Interface
+
+
 <h4><strong>UI/UX Design Concepts and Key Principles</strong></h4>
 
+🎨 Balancing multiple factors for effective interface design. \
+⚖️ Compromise Between:
+<ul>
+  <li>Interaction & Presentation Styles— Choose the most appropriate style (e.g., GUI, CLI, chat-based) based on the system's needs.\</li>
+  <li>User Background & Experience— Tailor the interface to the skills and familiarity of the users.</li>
+  <li>Available Devices— Design for different platforms (e.g., desktop, mobile, touchscreens, voice assistants).</li>
+</ul>
+
+
 <h4><strong>What Are the Usability Heuristics? Provide Some Examples.</strong></h4>
+
+![image](https://github.com/user-attachments/assets/a9678e23-f585-45b4-8fa1-74bf403db0ea)
+
+Visibility of system status \
+💡 Design should always keep users informed about what is going on, through appropriate feedback within a reasonable amount of time. \
+🗣️ Communicate ClearlyEnsure the system communicates its state — never act on users' behalf without informing them. \
+⚡ Respond QuicklyDeliver feedback as soon as possible — ideally, immediately after the user acts. \
+🤝 Build TrustFoster user confidence through open and continuous communication. \
+
+Match between system and the real world \
+📌 Use terms and concepts familiar to users and follow real-world conventions to present information in a natural and logical order. \
+🔍 Speak the User’s LanguageAvoid jargon — users shouldn't need a dictionary to understand your interface. \
+⚠️ Don’t Assume UnderstandingYour interpretation of words or ideas may differ from your users’. \
+📊 Research to AlignUse user research to uncover your audience’s terminology and mental models. \
+
+User control and freedom \
+🧭 Users should feel in control — provide a clear "emergency exit" to undo mistakes or back out of unintended actions easily. \
+↩️ Support Undo/RedoLet users reverse actions without penalty. \
+❌ Provide Clear ExitsInclude clearly labeled options like "Cancel" to escape ongoing processes. \
+👀 Make It DiscoverableEmergency exits should be clearly labeled and discoverable. \
+
+Consistency and standards \
+📖 Users shouldn't have to guess whether actions or terms mean the same thing — follow platform and industry conventions. \
+📚 Support LearnabilityUse both internal (within your product) and external (across platforms) consistency. \
+🧱 Keep It ConsistentStick to familiar layouts, terminology, and behaviors across screens and features. \
+🌐 Respect Jakob’s LawUsers rely on experiences from other products — align with what they already know. \
+
+
+Error prevention \
+🚫 The best error message is one that never needs to appear — prevent problems before they happen. \
+⚠️ Prioritize PreventionFocus first on high-cost errors, then address smaller frustrations. \
+🧭 Avoid SlipsUse smart defaults, input constraints, and clear layouts to guide users. \
+🧠 Prevent MistakesReduce memory load, support undo, and warn users before irreversible actions. \
+
+Recognition rather than recall \
+👁️ Minimize memory load — make actions, elements, and options visible so users don’t have to remember them. \
+🔍 Support RecognitionPresent relevant information where and when it's needed — don’t rely on memory. \
+📎 Contextual HelpOffer help and guidance in the moment, not through long tutorials. \
+📉 Reduce Cognitive LoadStreamline the interface to show only what’s necessary at each step. \
+
+Flexibility and efficiency of use \
+🧩 Design for both novices and experts — support shortcuts and customization to streamline frequent actions. \
+⌨️ Use AcceleratorsEnable keyboard shortcuts, touch gestures, and other time-saving tools for experienced users. \
+🎯 Personalize ExperiencesTailor content and functionality to suit individual preferences and usage patterns. \
+🛠️ Allow CustomizationLet users configure the interface or workflow to match their habits and needs. \
+
+Aesthetic and minimalist design \
+🎯 Interfaces should show only what’s necessary — every extra element competes with the important ones. \
+🔬 Focus on EssentialsDesign content and visuals to highlight what truly matters. \
+🚫 Avoid DistractionsRemove unnecessary elements that clutter the interface or mislead users. \
+🏁 Support Primary GoalsPrioritize features and information that align with users’ main tasks. \
+
+Help users recognize, diagnose, and recover from errors \
+💬 Error messages should be clear, informative, and helpful — not cryptic or confusing. \
+🔴 Make It NoticeableUse familiar visuals like bold red text or icons to grab attention. \
+🗣️ Speak PlainlyAvoid technical jargon — describe the issue in user-friendly language. \
+🛠️ Offer SolutionsSuggest actions users can take right away to fix the problem. \
+
+Help and documentation \
+🧭 Even the best designs may need support — help should be easy to find, understand, and apply. \
+🔎 Make Help SearchableUsers should quickly find the guidance they need without digging. \
+📍 Provide Contextual HelpShow relevant instructions right when and where users need them. \
+📝 Use Clear, Actionable StepsList steps in plain language — no vague or overly technical instructions. \
+
+
 
 <h4><strong>What Is the Purpose of UX/UI Design?</strong></h4>
 
