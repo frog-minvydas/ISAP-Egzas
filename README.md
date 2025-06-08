@@ -363,13 +363,182 @@ ________________________________________________________________________________
 
 <h4><strong>Definitions of Security and Privacy. Common Security Tactics.</strong></h4>
 
+Security Definition: </br>
+A system’s ability to protect data and services from unauthorized access while ensuring access for legitimate users and systems.
+
+- 🔒 **Confidentiality** – Protection from unauthorized access. E.g.:
+  - a hacker cannot access your income tax returns on a government computer.
+
+- 🛡️ **Integrity** – Ensuring data and services are not manipulated without authorization. E.g.:
+  - your grade has not been changed since your instructor assigned it.
+
+- 📶 **Availability** – Guaranteeing the system is accessible for legitimate use. E.g.:
+  - a denial-of-service attack won’t prevent you from ordering a book from an online bookstore.
+
+Privacy Definition: </br>
+
+A concern closely related to security,  
+governed by separate regulations.
+
+- 📜 **Regulated by frameworks** like **GDPR** and similar data protection laws.
+
+- 🔥 **Personally Identifiable Information (PII)** includes:
+  - Data that can identify a person (e.g., name, SSN, birth date, biometric data)
+  - Data linked or linkable to a person (e.g., medical, educational, financial, or employment info)
+
+Security tactics </br>
+- **Objective:**  
+  Implement proactive and reactive measures to ensure system resilience against security threats.
+
+- **Detect Attacks**  
+  Identify potential threats through monitoring and alerts.
+
+- **Resist Attacks**  
+  Prevent or limit impact using controls like authentication, authorization, firewalls and encryption.
+
+- **React to Attacks**  
+  Contain and respond to active threats by revoking access or restricting login.
+
+- **Recover from Attacks**  
+  Restore systems and data and resume normal operations.
+
 <h4><strong>What Are the Common Ways to Implement Authentication in Web Applications? What Purpose Do OAuth and OpenID Serve For?</strong></h4>
+
+### HTTP Authentication:
+- **Basic** – Username and password sent encoded but unencrypted  
+- **Digest** – One-way MD5 hash of credentials and request using a server-provided nonce
+
+### App Authentication:
+- **API Key** – Simple key sent via header or query  
+- **Certificate-Based** – Uses digital certificates to identify users/devices  
+- **OpenID** – Standard for federated identity across providers
+- **Shibboleth** – Academic-focused identity federation  
+- **SAML** – Secure exchange of identity data between identity and service providers
+
+### Resource Authorization:
+- **OAuth 2.1** – Secure delegated access to third-party services 
+
+OAuth and OpenID purpose:
+**Authorization Server:**  
+Issues security tokens after user authentication, enabling apps and APIs to manage access (grant, deny, revoke).
+
+**Client:**  
+The app requesting access to protected resources (e.g., web app, SPA, or API calling another API).
+
+**Resource Owner:**  
+The end-user who owns the data; grants or denies access to their resources.
+
+**Resource Server:**  
+Hosts the data; relies on the authorization server to verify tokens and control access to data based on token information.
 
 <h4><strong>Definition of Multi-Factor Authentication.</strong></h4>
 
+- **Definition:**  
+  Grants access only after presenting two or more authentication factors:
+  - **Knowledge (Something you know):**  
+    Password, PIN, secret questions
+  - **Possession (Something you have):**  
+    Security card, smartphone, hardware token
+  - **Inherence (Something you are):**  
+    Fingerprint, facial recognition, iris scan
+
+- **Third-Party Authenticator (TPA):**  
+  Apps that generate rotating codes for second-factor authentication
+
+
 <h4><strong>Common Authorization Methods.</strong></h4>
 
+- **Role-Based Access Control (RBAC):**  
+  Access is granted based on a user’s assigned role. Also known as non-discretionary access control.
+
+- **Policy-Based Access Control (PBAC):**  
+  Access is dynamically determined by evaluating rules and policies.
+
+- **Attribute-Based Access Control (ABAC):**  
+  Grants access based on user, resource, and environment attributes.
+
+- **Privileged Access Management (PAM):**  
+  Secures and monitors accounts with elevated access to sensitive systems.
+
+
 <h4><strong>Common Security Vulnerabilities and How to Avoid Them?</strong></h4>
+
+1. **Broken Object Level Authorization**
+   - Implement authorization checks with user policies and hierarchy  
+   - Don’t rely on IDs sent from client. Use IDs stored in the session object instead  
+   - Check authorization each time there is a client request to access database  
+   - Use random non-guessable IDs (UUIDs)  
+
+2. **Broken Authentication**
+   - Check all possible ways to authenticate to all APIs  
+   - Password reset APIs and one-time links also allow users to get authenticated and should be protected just as seriously  
+   - Use standard authentication, token generation, password storage, Multi-factor authentication  
+   - Use short-lived access tokens  
+   - Authenticate your apps (so you know who is talking to you)  
+   - Use stricter rate-limiting for authentication, implement lockout policies and weak password checks  
+
+3. **Broken Object Property Level Authorisation**
+   - Don’t automatically bind incoming data and internal objects  
+   - Explicitly define all the parameters and payloads you are expecting  
+   - For object schemas, use the `readOnly` set to `true` for all properties that can be retrieved via APIs but should never be modified  
+   - Precisely define at design time the schemas, types, patterns you will accept in requests and enforce them at runtime  
+
+4. **Unrestricted Resources Consumption**
+   - Rate limiting  
+   - Payload size limits  
+   - Rate limits specific to API methods, clients, addresses  
+   - Checks on compression ratios  
+   - Limits on container resources  
+
+5. **Broken Function Level Authorization**
+   - Don’t rely on app to enforce admin access  
+   - Deny all access by default  
+   - Grant access based on specific roles  
+   - Properly design and test authorization  
+
+6. **Unrestricted Access to Sensitive Business Flows**
+   - The mitigation planning should be done in two layers:  
+     - *Business*: identify the business flows that might harm the business if excessively used  
+     - *Engineering*: choose the right protection mechanisms to mitigate the business risk  
+   - Slow down automated threats:  
+     - Device fingerprinting (e.g., deny service to headless browsers)  
+     - Human detection (e.g., CAPTCHA, typing pattern biometrics)  
+     - Non-human pattern detection (e.g., too-quick checkout behavior)  
+   - Consider blocking IPs of Tor exit nodes and known proxies  
+
+7. **Server-Side Request Forgery (SSRF)**
+   - Isolate the resource fetching mechanism in your network  
+   - Use allowlists for:  
+     - Remote origins (e.g., Google Drive, Gravatar)  
+     - URL schemes and ports  
+     - Accepted media types  
+   - Disable HTTP redirections  
+   - Use a well-tested URL parser  
+   - Validate and sanitize all client-supplied input  
+   - Do not send raw responses to clients  
+
+8. **Security Misconfiguration**
+   - Repeatable hardening and patching processes  
+   - Automated process to locate configuration flaws  
+   - Disable unnecessary features  
+   - Restrict administrative access  
+   - Define and enforce all outputs including errors  
+
+9. **Improper Inventory Management**
+   - Inventory all API hosts  
+   - Limit access to anything that should not be public  
+   - Limit access to production data; segregate access to production and non-production data  
+   - Implement additional controls such as API firewalls  
+   - Properly retire old versions or backport security fixes  
+   - Implement strict authentication, redirects, CORS, etc.  
+
+10. **Unsafe Consumption of APIs**
+   - Evaluate service providers for API security posture  
+   - Ensure secure communication (TLS) for all API interactions  
+   - Validate and sanitize data received from integrated APIs  
+   - Maintain an allowlist of safe redirect destinations for integrated APIs  
+
+
 
 
 _________________________________________________________________________________________________________________________
