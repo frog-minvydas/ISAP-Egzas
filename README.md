@@ -1077,6 +1077,76 @@ A REST API is an architectural style for building distributed systems where reso
 - Responses include hyperlinks to guide clients on next available actions.
 - Promotes discoverability and loose coupling.
 
+## 7. How to ensure asynchronicity in REST API design?
+
+### Long-Running Operations
+
+- **Use Resource-based LRO (RELO)**  
+  ▸ `POST` a command to initiate an operation  
+  ▸ `GET` the status from a resource URI
+
+- **Use Stepwise LRO (SLRO)**  
+  ▸ Initial response returns an operation-location URL  
+  ▸ Client polls the operation endpoint (optionally using Retry-After header)
+
+### Webhooks (Push Notifications)
+
+- Client registers a callback URL with the server  
+- Server pushes updates to that URL when an event occurs  
+- Avoids polling; ideal for lightweight, real-time updates
+
+#### Two subscription types:
+- **Firehose subscription** – A subscription is manually created in an app registration portal.
+- **Per-resource subscriptions** – Subscribing app creates subscriptions at runtime for specific entities.
+
+### Fire-and-forget operations
+
+- The API acknowledges receipt and processes the request in the background  
+- No immediate result is returned to the client
+
+## 8. What is message-based communication?
+
+Message-based communication is an integration style where systems exchange asynchronous messages via a **message broker**, instead of making direct requests.
+
+### Key components:
+- **Producer** – Sends messages  
+- **Consumer** – Receives and processes messages  
+- **Broker** – Intermediates  
+- **Channel** – Pathway through which messages travel
+
+### Message types:
+- **Event** – Something that already happened  
+- **Command** – Instructs a specific action  
+- **Query** – Asks for information
+
+## 9. What is the purpose of different messaging patterns?
+
+Different messaging patterns are used to solve common challenges in message-based communication.
+
+- **Invalid Message Channel** – Diverts unreadable or bad messages to a separate channel. Ensures the main flow is not disrupted by faulty data.
+- **Datatype Channel** – Routes each data type to a specific channel. Consumers know exactly what data to expect.
+- **Dead Letter Channel** – Stores undeliverable messages that couldn’t be processed. Helps with debugging and retry mechanisms.
+- **Channel Adapter** – Connects applications to the messaging system. Allows apps to send/receive messages without changing core logic.
+- **Messaging Bridge** – Connects different messaging systems. Ensures messages flow across systems/platforms.
+- **Pseudosynchronicity** – Simulates synchronous request-reply in an async system. Useful for operations needing confirmation or response.
+- **Request-reply via Correlation** – Simulates synchronous behavior using correlation IDs. Enables matching responses to requests.
+- **Request-reply via Temporary Queue** – Uses a unique temporary queue per client. Prevents interference between different replies.
+- **Competing Consumers and Messaging Ordering** – Multiple consumers read from the same queue. Increases parallelism and throughput. Ensures message ordering while scaling consumers using partitioning.
+- **Handling Duplicate Messages** – Prevents re-processing the same message. Achieved via idempotent logic or tracking message IDs.
+- **Guaranteed Delivery** – Ensures message persistence and eventual delivery. Stores messages on disk until successfully acknowledged by the consumer.
+
+## 10. How sync/async APIs can be documented?
+
+### Synchronous APIs
+- Use **OpenAPI Specification (OAS)**.
+- Described using **YAML/JSON**.
+- Tools: **Swagger UI**, **ReDoc**.
+
+### Asynchronous APIs
+- Use **AsyncAPI Specification**.
+- Designed for event-driven and message-based systems.
+- Works with **Kafka**, **MQTT**, **WebSockets**.
+
 **<h1>Usability</h1>**
 
 
