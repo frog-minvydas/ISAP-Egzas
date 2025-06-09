@@ -1,7 +1,7 @@
 **<h1>Domain Driven Design</h1>**
 
-### **1. What is DDD?**
-An approach to software development enabling teams to more effectively manage the construction and maintenance of software for complex problem domains.
+### 1. What is DDD?
+- An approach to software development enabling teams to more effectively manage the construction and maintenance of software for complex problem domains.
 
 ## 2. What is Big Ball of Mud?
 - Is a haphazardly structured, sprawling, sloppy, duct-tape-and-baling-wire, spaghetti-code system that **lacks a perceivable architecture**.
@@ -34,215 +34,1049 @@ An approach to software development enabling teams to more effectively manage th
 - **Tight coupling between services**  
   ▸ Strong dependencies between modules hinder scalability and flexibility.
 
-Values:
+## 4. What values does DDD provide?
 
-domain model
-precise definition and understanding of the business is developed
-domain experts contribute to software design 
-better user experience is gained 
-clean boundaries are placed around pure models 
-Enterprise Architecture is better organized
-Agile, Iterative, Continuous modelling
-new tools, both Strategic and Tactical, are employed
+- **Rich and precise domain models**  
+  ▸ DDD leads to the development of models that clearly reflect real-world business processes and rules.
 
-Principles:
+- **Improved understanding of the business**  
+  ▸ By engaging domain experts in the modelling process, teams build software aligned with business goals.
 
-Exploration and experimentation
-Challenging assumptions
-Continuously modelling
-No wrong models – practice
-Flexible code aids discovery
-Problem solver first, technologist second
-Don’t solve all the problems
-Good is good enough
+- **Enhanced User Experience**  
+  ▸ Well-designed models lead to better software usability and functionality, as they map closely to user needs.
 
+- **Clear Architecture boundaries**  
+  ▸ Bounded contexts isolate models and prevent the spread of conflicting concepts, increasing clarity and maintainability.
 
+- **Better Enterprise Architecture**  
+  ▸ The entire system becomes easier to organize and evolve through defined domains and subdomains.
 
-**<h4>What are the main concerns of strategic modelling in DDD?</h4>**
-Bounded context, Ubiquitous language, context map, concrete view
+- **Agile and Iterative modelling**  
+  ▸ DDD supports continuous improvement through flexible design that evolves with changing business needs.
 
-**<h4>What is the Concept map? What is the value of good domain boundaries?</h4>**
+- **Strategic and tactical toolsets**  
+  ▸ DDD introduces practical tools and patterns for long-term success, including aggregates, repositories, services, and context maps.
 
-Good domain boundaries contribute to many organizational and technical improvements.
-As shown in figure, looser coupling results in fewer dependencies and
-faster flow—and, from personal experience, much happier teams. Cohesive boundaries
-that group related concepts lead to a clearer sense of purpose, aligning and motivating
-teams and incentivizing sustainable practices. Cohesion also makes it easier to
-learn the domain, in turn helping teams go beyond coding to contributing product
-and domain innovations.
+## 5. What are the main principles of DDD?
 
-Context map - global view of bounded contexts
-overlap between project management and software design
-does not have to be documented in any form; yet it needs to be understood and agreed.
+- **Exploration and Experimentation**  
+  ▸ Modelling is a learning process. Teams should explore domain ideas through continuous experimentation.
 
-Domain Types:
-Core Domain
-Supporting Domain
-Generic Domain
-Bounded Contexts:
-Internal
-External
+- **Challenging assumptions**  
+  ▸ Developers must critically evaluate domain knowledge, asking questions and refining.
 
-**<h4>What are the context mapping patterns?</h4>**
+- **Continuous modelling**  
+  ▸ The models evolve over time, driven by insights gained during development and collaboration.
 
-Shared kernel
-Partnership
-Customer/Supplier
-Anticorruption Layer
-Open Host Service
-Even Publisher
-Published Language
-Separate ways
-Conformist
+- **Problem solver first, technologist second**  
+  ▸ The goal is to solve business problems, not just apply technical solutions for their own sake.
 
+- **Do not try to solve all the problems at once**  
+  ▸ Focus on the core domain and tackle complex areas incrementally.
 
+- **Good is good enough**  
+  ▸ Striving for perfect models can lead to overengineering. Aim for models that are accurate enough to be useful and maintainable.
 
-**<h4>Tactical modelling concepts and patterns.</h4>**
+## 6. What are the main concerns of strategic modelling in DDD?
 
-Aggregate
-A cluster of associated objects that are treated as a unit for the purpose of data changes.
-External references are restricted to one member of the aggregate, designated as the root.
-A set of consistency rules applies within the aggregate boundaries.
-Entity
-An object fundamentally defined not by its attributes, but by a thread of continuity and identity.
-Value Object
-An object that describes some characteristic or attribute but carries no concept of identity.
-Whole Value
-An object that models a single, complete concept.
-Repository
-A mechanism for encapsulating storage, retrieval, and search behavior which emulates a collection of objects.
-Service
-An operation offered as an interface that stands alone in the model, with no encapsulated state.
-Factory
-A mechanism for encapsulating complex creation logic and abstracting the type of a created object for the sake of a client.
+- **Identifying Domains and Subdomains**
+- **Defining Bounded Contexts**
+- **Establishing Ubiquitous Language**
+- **Context Mapping**
+- **Mapping Context Relationships**
+- **Avoiding The Big Ball of Mud**
 
+## 7. What is the Context map?
 
-**<h4>Domain Model Implementation patterns: domain model, transaction script, table module, active record, anemic domain model.</h4>**
+- Is a global view that illustrates how different Bounded Contexts in a system relate and interact with each other.
 
-Domain model
-The domain model pattern is based on the premise that there is no database
-Model‐driven as opposed to data‐driven design
+## 8. What is the value of good domain boundaries?
 
-Transaction script
-Follows a procedural style of development rather than an object‐oriented approach
-Single procedure is created for a business transaction; grouped in a static manager or service class
-Each procedure contains all the business logic that is required to complete the business transaction
-from the workflow, business rules, and validation checks 
-to persistence in the database
+- Good domain boundaries are essential for building well-structured, maintainable, and scalable systems.  
+  They ensure that each part of the system is focused, cohesive, and evolves independently.
 
-Table Module
-A single object represents a table or view in the database. 
-The object is responsible for all persistence needs along with business logic behavior. 
-Good fit for simpler parts of the domain that are isolated by a bounded context and that are simply forms over data. 
-If the object model and database model start to diverge, then refactor toward the domain model pattern.
+## 9. What are the context mapping patterns?
 
-Active record
-An object that wraps a row in a database table or view, encapsulates the database access, and adds domain logic on that data.
+- **Shared Kernel**  
+  ▸ Teams share a small, explicitly defined subset of the domain model  
+  ▸ Requires close collaboration and coordination
 
-Anemic domain model
-Anemic domain model – anti-pattern: domain objects lack significant business logic.
-Business logic resides outside the model, leaving domain objects as mere data transfer classes.
-Violation of the "Tell, Don’t Ask" principle; objects should communicate capabilities instead of exposing properties for client determination.
-Suitable for parts of domain models with minimal logic or teams less experienced in object-oriented programming.
-Can integrate with the Ubiquitous Language (UL) and serve as a preliminary step toward a richer domain model.
+- **Partnership**  
+  ▸ Two teams with dependent goals collaborate closely  
+  ▸ They share schedules, integration, and planning to succeed — to fail together  
+  ▸ Regular synchronization and continuous integration are essential
 
-_________________________________________________________________________________________________________________________
+- **Customer-Supplier**  
+  ▸ One team provides functionality to another  
+  ▸ Downstream needs influence upstream plans  
+  ▸ Agreements are negotiated for prioritization and delivery
+
+- **Conformist**  
+  ▸ Downstream conforms to the upstream model without negotiation  
+  ▸ Common when the upstream is off-the-shelf or uncooperative  
+  ▸ Downstream gives up autonomy for simplicity
+
+- **Anticorruption Layer (ACL)**  
+  ▸ Downstream team creates a translation layer to protect its own model from upstream influence  
+  ▸ Ensures isolation and maintains model integrity
+
+- **Open Host Service (OHS)**  
+  ▸ Upstream exposes a standard protocol for integration  
+  ▸ Open to all consumers via a well-documented interface
+
+- **Event Publisher**  
+  ▸ Upstream context publishes its domain events via a messaging system  
+  ▸ Downstream contexts can subscribe to the relevant events, adapting or transforming them to fit their models
+
+- **Published Language**  
+  ▸ A shared information exchange language between contexts  
+  ▸ Can be used with OHS for easier translation
+
+- **Separate Ways**  
+  ▸ When two contexts have no valuable integration, they operate independently  
+  ▸ Reduces unnecessary complexity and coupling
+
+## 10. Tactical modelling concepts and patterns
+
+- **Aggregate**  
+  ▸ A cluster of associated objects that are treated as a unit for the purpose of data changes  
+  ▸ Only the Aggregate Root is accessible from the outside  
+  ▸ Ensures consistency rules within its boundary
+
+- **Entity**  
+  ▸ An object with a distinct identity that persists over time, regardless of its attribute changes
+
+- **Value Object**  
+  ▸ An object that describes some characteristics or attributes but carries no concept of identity
+
+- **Whole Value**  
+  ▸ An object that models a single, complete concept
+
+- **Repository**  
+  ▸ A mechanism for encapsulating storage, retrieval, and search behaviour which emulates a collection of objects
+
+- **Service**  
+  ▸ An operation offered as an interface that stands alone in the model, with no encapsulated state
+
+- **Factory**  
+  ▸ A mechanism for encapsulating complex creation logic and abstracting the types of a created object for the sake of a client
+
+- **Domain Event**  
+  ▸ Captures a significant occurrence in the domain  
+  ▸ Enables event-driven communication inside and outside the domain
+
+- **Invariants**  
+  ▸ Rules that enforce consistency in the domain model
+
+- **Event Sourcing**  
+  ▸ State changes in the domain are not stored as current values, but rather as a sequence of events that represent all the changes leading to the current state
+
+## 11. Domain model implementation patterns: domain model, transaction script, table module, active record, anemic domain model
+
+- **Domain model**  
+  ▸ A rich, object-oriented model where business logic and data are encapsulated together in Entities, Value Objects, and Aggregates.  
+  ▸ Focuses on the domain not the database.  
+  ▸ Follows model-driven design.  
+  ▸ Suited for complex domains with evolving business rules.
+
+- **Transaction Script**  
+  ▸ A procedural approach where each use case is handled by a single script or method that coordinates all steps.  
+  ▸ Business logic is placed directly inside methods.  
+  ▸ Logic is grouped by transaction, not domain concept.  
+  ▸ Suitable for simple or CRUD-heavy systems.  
+  ▸ Quick to implement but hard to maintain at scale.
+
+- **Table module**  
+  ▸ A single object that represents a database table or view, combining persistence logic and business rules.  
+  ▸ One object per table.  
+  ▸ Often used in UI-heavy applications.  
+  ▸ Good for simple domain or bounded contexts with low complexity.
+
+- **Active Record**  
+  ▸ An object that wraps a row in a database, containing both data access logic and some business logic.  
+  ▸ Common in ORMs.  
+  ▸ Couples domain logic with persistence.  
+  ▸ Easy to use in basic apps, but hard to scale and test in complex domains.
+
+- **Anemic domain model**  
+  ▸ A domain model where objects contain no behavior, only data (getters/setters) and is an anti-pattern.  
+  ▸ Violates object-oriented design.  
+  ▸ Logic lives outside the domain in services or controllers.
+
+## 12. Domain-Driven Design Pros and Cons
+
+### Advantages
+- Eases communication  
+- Improves flexibility  
+- Emphasizes domain over interface  
+- Maintainability
+
+### Disadvantages
+- Requires robust domain experts  
+- High cost  
+- Time-consuming
+
 **<h1>Introduction to Software Architecture</h1>**
 
+## 1. What is Software Architecture and why is it important?
 
-**<h4>What is Software Architecture and why it is important?</h4>**
+- The fundamental organization of a software system embodied in its components, their relationships to each other and to the environment, and the principles guiding its design and evolution.
 
-**<h4>Common Software Architectural patterns and styles.</h4>**
+- **Shapes system quality**  
+  ▸ Directly influences attributes like performance, security, scalability, and maintainability.
 
-**<h4>Common types of Client/Server applications. Difference between Multi-Page and Single-Page Web Applications.</h4>**
+- **Guides change management**  
+  ▸ Helps adapt the system to new requirements or technologies over time.
 
-**<h4>Common structural patterns of Software Architecture.</h4>**
+- **Embeds critical design decisions**  
+  ▸ Captures decisions that are hard to change once implemented.
 
-**<h4>Data management design patterns: CRUD and CQRS. Principles, purposes, differences.</h4>**
+- **Influences organizational structure**  
+  ▸ System structure often reflects the communication structure of the organization.
 
-**<h4>Software Architecture definition principles and techniques.</h4>**
+- **Enables incremental development**  
+  ▸ Supports modularity and phased delivery.
 
+## 2. Common Software Architectural patterns and styles
 
-_________________________________________________________________________________________________________________________
+### Architectural Pattern  
+- A named collection of architectural design decisions that are applicable to a recurring design problem, parameterized to account for different software development contexts in which that problem appears.
+
+### Architectural Style  
+- A named collection of architectural design decisions.  
+
+### A style is a blueprint of the overall system structure, while a pattern is a blueprint of a specific part of the system.
+
+### Common architectural patterns
+
+- **Big Ball of Mud**  
+  ▸ Absence of any architecture structure.
+
+- **Unitary Architecture**  
+  ▸ Hardware and software as a single unit (mainframe, embedded).
+
+- **Peer-to-peer**  
+  ▸ Acting as both client and server.
+
+- **Publish-Subscribe**  
+  ▸ Announcing events to multiple interested consumers asynchronously.
+
+- **Sense-Compute-Control**  
+  ▸ Structuring embedded control applications.
+
+- **Client/Server**  
+  ▸ Application types: Desktop, Mobile, Web (MPA, SPA, PWA).  
+  ▸ Structure Types: N-Layer, Clean, Vertical.  
+  ▸ Interaction and Presentation: MVC, MVA, MVP, MVVM.
+
+### Common architectural styles
+
+#### **Monolith**
+
+- **Layered architecture**  
+  ▸ Divides systems into layers (UI, business, persistence, database).  
+  ▸ Easy to start with, good separation of concerns.
+
+- **Modular architecture**  
+  ▸ Modularizes a monolith using Bounded Contexts or modules.  
+  ▸ Easier to evolve into microservices.
+
+- **Pipeline architecture**  
+  ▸ Uses chained filters (components) and pipes (connectors).  
+  ▸ Ideal for data transformation (ETL, analytics).
+
+- **Microkernel architecture**  
+  ▸ Core system + plug-ins.  
+  ▸ Common in product platforms like IDEs.
+
+#### **Distributed**
+
+- **Service-based architecture**  
+  ▸ Application composed of several coarse-grained services.  
+  ▸ Easier to manage than microservices but still scalable.
+
+- **Event-driven architecture**  
+  ▸ System reacts to events asynchronously.  
+  ▸ Highly scalable and reactive.
+
+- **Space-based architecture**  
+  ▸ Eliminates traditional database bottlenecks using in-memory data grids.  
+  ▸ Designed for high-concurrency and scalable systems.
+
+- **Service-oriented architecture (SOA)**  
+  ▸ Distributed architectural style where business functionality is decomposed into modular, loosely coupled services that communicate over the network using standardized protocols.  
+  ▸ Each service is independently deployable, reusable, and exposes well-defined interfaces.
+
+- **Microservices architecture**  
+  ▸ Highly decoupled services organized by domain.  
+  ▸ Enables independent development and deployment.
+
+## 3. Common types of Client/Server applications
+
+### Desktop applications
+- **Examples**: Windows (WPF, WinForms), macOS apps, JavaFX, Qt, Electron
+- **Installed locally**
+- **Full access to device hardware and OS**
+- **Rich UI and performance**
+- **Typically uses some MV* framework**
+
+#### Pros
+- Offline mode  
+- Privacy/security  
+- Better performance  
+- Optimal use of computer resources
+
+#### Cons
+- Not portable  
+- Hard drive space  
+- Installation  
+- Updates
+
+---
+
+### Mobile applications
+
+#### Native (iOS, Android)
+#### Hybrid (Flutter, React Native)
+
+#### Pros
+- Fast graphics  
+- Better performance  
+- Access to native APIs in phone’s OS  
+- UI components and libraries
+
+#### Cons
+- Distribution via Stores  
+- Longer development cycle  
+- Rules and frameworks by native platforms  
+- Phones/tablets defined separately, different layout
+
+---
+
+### Web applications
+
+#### Multi-page application (MPA)
+- Traditional web apps (Spring MVC, ASP.NET)
+- Reloads the page on navigation
+
+##### Pros
+- SEO-friendly  
+- More secure  
+- Easier to scale  
+- Can be built using single technology
+
+##### Cons
+- Slower due to page reloads  
+- UI/Backend coupling  
+- No offline  
+- Expensive maintenance
+
+---
+
+#### Single-page application (SPA)
+- Uses frameworks like React, Angular, Vue  
+- Loads once and dynamically updates the UI  
+- Fast user experience, but also SEO-friendly
+
+##### Pros
+- Fast response  
+- Easy debugging  
+- Linear content flow  
+- Caching capabilities
+
+##### Cons
+- SEO readiness  
+- Browser history  
+- Security
+
+##### Common rendering methods:
+- **Client-side rendering**  
+  ▸ In SPA, the server only generates the very first page that the user requests, leaving all subsequent pages to be rendered by the browser.
+
+- **Server-side rendering**  
+  ▸ Dynamic generation of the HTML page that is sent from web server to browser.
+
+- **Static-site generation**  
+  ▸ SPA is generated on build and hosted via static web sites/blob storages.
+
+---
+
+#### Progressive web application (PWA)
+- Web apps with native-like features  
+- Works offline, supports push notifications  
+- Installed via browser
+
+##### Pros
+- Connectivity/notifications  
+- Self-updates  
+- Safety  
+- Easy installation  
+- Dev savings
+
+##### Cons
+- Search traffic  
+- Cannot support native-app typical features
+
+## 4. Difference between Multi-page and Single-page Web Applications
+
+- MPA does full page reload on each action, whereas SPA loads once and updates dynamically.
+- SEO is strong on MPA (server-side rendered HTML), while SPA is weaker unless using server-side rendering (SSR).
+- MPA has slower user experience compared to fast and seamless interactions in SPA.
+- MPA is simpler to build and manage compared to SPA routing and state management.
+- MPA is used in content-heavy sites (blogs, news), whereas SPA is used in app-like interfaces (dashboards, tools).
+
+## 5. Common structural patterns of Software Architecture
+
+### N-Tier Architecture
+- Divides an application into multiple layers or tiers. Each tier is responsible for specific functionality and communicates with others through well-defined interfaces.
+- Commonly used in large-scale enterprise applications.
+
+#### Typical layers
+- **Presentation layer (UI)**:  
+  ▸ Responsible for presenting information and receiving user input. Includes web pages, desktop apps, or mobile apps.
+
+- **Services layer**:  
+  ▸ Includes services interfaces and message types to interact with PL or external systems.
+
+- **Application/Business layer**:  
+  ▸ Contains business logic and handles data processing, workflow, validation, and transformation.
+
+- **Data layer**:  
+  ▸ Handles accessing, persisting, and transforming data.
+
+- Other tiers may include integration, security, authentication, or authorization.
+
+#### Pros
+- **Scalability**:  
+  ▸ Each tier can be scaled independently for high traffic/data.
+
+- **Maintainability**:  
+  ▸ Clear separation of concerns enables easier updates and changes.
+
+- **Reusability**:  
+  ▸ Modular code can be reused across multiple apps.
+
+- **Security**:  
+  ▸ Separating presentation and data tiers can improve security.
+
+#### Cons
+- **Complexity**:  
+  ▸ Can be difficult to design and implement.
+
+- **Performance**:  
+  ▸ Communication between tiers can cause overhead.
+
+- **Cost**:  
+  ▸ Development and maintenance may be expensive for small apps.
+
+---
+
+### The Clean Architecture
+
+#### Based on:
+- Hexagonal Architecture  
+- Cockburn  
+- Domain-Context-Interaction  
+- Boundary-Control Entity
+
+#### Motivation
+- Create systems that are:
+  - **Independent of frameworks**  
+  - **Testable**  
+  - **Independent of the UI**  
+  - **Independent of the database**  
+  - **Independent of any external agency**
+
+#### Pros
+- **Maintainability**  
+- **Testability**  
+- **Flexibility**:  
+  ▸ Easily swap frameworks, UI, or DBs.
+
+- **Scalability**:  
+  ▸ Layered structure supports growth.
+
+#### Cons
+- **Complexity**:  
+  ▸ Can be harder to design and implement.
+
+- **Learning curve**:  
+  ▸ Requires understanding new architectural ideas.
+
+- **Time and cost**:  
+  ▸ More resource-intensive than simpler architectures.
+
+---
+
+### Vertical Slice Architecture
+- Built around distinct requests (features or use cases).
+- Encapsulates everything from front-end to back-end needed for a feature.
+- Goal is to **minimize coupling between slices**, and **maximize cohesion within** a slice.
+
+## 6. Data management design patterns: CRUD and CQRS — Principles, purposes, differences
+
+### CRUD (Create, Read, Update, Delete)
+- A simple and commonly used design pattern in managing data in databases.
+
+#### Pros
+- **Simple**: Easy-to-understand design pattern.
+- **Widely used**: Supported by most databases and ORM frameworks.
+- **Fast development**: Can be quickly implemented, reducing time and cost.
+
+#### Cons
+- **Limited scalability**: Not suitable for high concurrency applications.
+- **Limited flexibility**: May not fit complex data models or custom business logic.
+
+---
+
+### CQRS (Command Query Responsibility Segregation)
+- A design pattern that separates read and write operations into separate models or services.
+
+#### Pros
+- **High scalability**: Designed for high concurrency and load.
+- **Flexibility**: Supports complex models and custom business logic.
+- **Improved performance**: Allows specialized databases for read/write operations.
+
+#### Cons
+- **Complexity**: Requires more design and implementation effort.
+- **Higher cost**: Needs more infrastructure and resources.
+- **Learning curve**: Involves new concepts and approaches.
+
+---
+
+### CRUD vs CQRS
+
+- **Data management**:  
+  ▸ CRUD provides a unified model, CQRS splits read/write logic.
+
+- **Data storage**:  
+  ▸ CRUD typically uses one database, CQRS may use separate ones.
+
+- **Scalability**:  
+  ▸ CQRS is optimized for high-scale scenarios, CRUD is not.
+
+- **Complexity**:  
+  ▸ CQRS is more complex and resource-intensive than CRUD.
+
+## 7. Software Architecture definition principles and techniques
+
+- Architecture is the fundamental organization of a software system embodied in its components, their relationships to each other and to the environment, and the principles guiding its design and evolution.
+
 **<h1>Software Architecture Styles</h1>**
 
+## 1. Laws and characteristics of Software Architecture
 
-<h4><strong>Laws and Characteristics of Software Architecture</strong></h4>
+- **Everything in software architecture is a trade-off**  
+  ▸ Every architectural decision involves compromises.
 
-<h4><strong>Common Fallacies about Distributed Software Architecture</strong></h4>
+- **Why is more important than how**  
+  ▸ Understanding why a decision is made is more important than knowing how it's implemented.
 
-<h4><strong>Principles of Monolith Software Architecture Style</strong></h4>
+### Characteristics
 
-<h4><strong>Principles of Pipeline Architecture Style</strong></h4>
+#### Operational Architecture Characteristics
+- **Performance** – system responsiveness under specific workloads
+- **Robustness** – ability to handle errors and edge cases
+- **Availability** – system uptime and readiness
+- **Continuity** – disaster recovery capabilities
+- **Reliability/Safety** – tolerance for failure, especially in mission-critical systems
+- **Recoverability** – speed of system restoration after failure
+- **Scalability** – how performance holds under increased load
 
-<h4><strong>Principles of Microkernel Architecture Style</strong></h4>
+#### Structural Architecture Characteristics
+- **Extensibility** – ease of adding new features
+- **Installability** – ease of system installation on all necessary platforms
+- **Localization** – support for various languages, currencies, and formats
+- **Maintainability** – ease of fixing or improving the system
+- **Supportability** – ease of debugging and providing technical support
+- **Upgradeability** – ability to update components easily
+- **Configurability** – customization by end users
+- **Reuse** – ability to leverage common components across multiple products
+- **Portability** – ability to run on multiple platforms
 
-<h4><strong>Principles of Service-Based Architecture Style</strong></h4>
+#### Cross-cutting Architecture Characteristics
+- **Accessibility** – support for users with special needs
+- **Usability** – ease of use and user experience
+- **Archivability** – requirements for storing or deleting old data
+- **Authentication** – identity verification of users
+- **Authorization** – access control to features and data
+- **Legal** – compliance with laws like GDPR
+- **Privacy** – data protection from internal misuse
+- **Security** – protection against data breaches or malicious use
 
-<h4><strong>Principles of Event-Driven Architecture Style</strong></h4>
+#### Domain Concerns and Architecture Characteristics
+- **Mergers and acquisitions** – interoperability, scalability, adaptability, extensibility
+- **Time to market** – agility, testability, deployability
+- **User satisfaction** – performance, availability, fault tolerance, testability, deployability, agility, security
+- **Competitive advantage** – agility, testability, deployability, scalability, availability, fault-tolerance
+- **Time and budget** – simplicity, feasibility
 
-<h4><strong>Differences between Broker and Mediator Topologies in Event-Driven Architecture</strong></h4>
+## 2. Common fallacies about distributed Software Architecture
 
-<h4><strong>When is Hybrid Event-Driven Architecture Typically Considered?</strong></h4>
+- **The network is reliable**  
+  ▸ Systems relying heavily on the network must account for outages and use mechanisms like circuit breakers or retries.
 
-<h4><strong>Main Principles of Space-Based Architecture Style</strong></h4>
+- **Latency is zero**  
+  ▸ Even small latencies add up. Avoid long chains of synchronous service calls. Use asynchronous or batch processing where possible.
 
-<h4><strong>Main Principles of Microservices Architecture Style</strong></h4>
+- **Bandwidth is infinite**  
+  ▸ Network bandwidth is limited and can become a bottleneck. Minimize data exchange between services.
 
-<h4><strong>What Should Be Considered When Selecting an Architectural Style?</strong></h4>
+- **The Network is Secure**  
+  ▸ Inter-service communication can be intercepted or attacked. Secure every endpoint, use encryption, and apply security measures even internally.
 
-_________________________________________________________________________________________________________________________
+- **The Network Topology Doesn’t Change**  
+  ▸ Network infrastructure changes (e.g., firewalls, routing rules, subnets). Architects must design for dynamic environments.
+
+- **There is only one network administrator**  
+  ▸ In large organizations, multiple admins manage different network parts. Miscommunication can occur without clear coordination.
+
+- **Transport cost is zero**  
+  ▸ Distributed systems increase costs (hardware, proxies, gateways, maintenance). Factor in these costs during architectural decisions.
+
+- **The network is homogeneous**  
+  ▸ Networks often consist of heterogeneous systems and technologies. Incompatibilities can cause intermittent issues like packet loss or protocol mismatches.
+
+## 3. Principles of Monolith Software Architecture style
+
+- A monolith is a software application where all components are packaged and deployed as a single unit.  
+  There are various styles within monolithic architecture, each with its own principles.
+
+### Principles
+- **Single deployment unit**  
+  ▸ All modules, features, and components are deployed together.
+
+- **Tight integration**  
+  ▸ Internal components often share memory and code.
+
+- **Simple deployment and operations**  
+  ▸ Easy to build and deploy, especially for small teams or early-stage projects.
+
+- **Low latency communication**  
+  ▸ Internal function calls are faster than network calls, offering better performance.
+
+## 4. Principles of Pipeline Architecture style
+
+- The Pipeline Architecture Style organizes processing as a sequence of discrete, independent processing units (filters) connected by unidirectional data channels (pipes).
+
+### Principles
+- **Separation of concerns via filters**  
+  ▸ Each filter performs a single, well-defined task. Filters are self-contained, typically stateless, and independent of one another.
+
+- **Unidirectional communication via pipes**  
+  ▸ Data flows in one direction through pipes between filters.
+
+- **High composability**  
+  ▸ Filters can be composed and chained in various ways to create flexible workflows.
+
+- **Loose coupling**  
+  ▸ Filters do not know about the logic of upstream or downstream filters. Communication is based solely on data passed through pipes.
+
+- **Efficient performance**  
+  ▸ Designed for high performance.
+
+## 5. Principles of Microkernel Architecture style
+
+- Centered around a minimal core system that provides essential services, with plug-in components extending functionality in a modular and isolated way.
+
+### Principles
+- **Minimal core functionality (the Kernel)**  
+  ▸ The core system contains only the essential capabilities required to run the system.
+
+- **Plug-in extensions for business logic**  
+  ▸ Most of the application logic resides in plug-in modules. Plug-ins interact with the core via well-defined contracts or interfaces. New features can be added by simply adding or replacing plugins.
+
+- **Separation of core and custom logic**  
+- **Loose coupling and high cohesion**  
+- **Extensibility and maintainability**
+
+## 6. Principles of Service-Based Architecture style
+
+- A pragmatic and simplified distributed architecture that combines benefits of microservices with a coarse-grained domain service approach.  
+  Designed to balance maintainability and independent deployment while avoiding full microservices complexity.
+
+### Principles
+- **Coarse-grained services**  
+  ▸ Services are larger and more domain-focused than microservices.
+
+- **Independent deployment**  
+  ▸ Each service can be deployed and scaled independently, though they may share a database. Improves reliability and fault isolation.
+
+- **Single database**  
+  ▸ Unlike microservices, services often share a database (logically partitioned). Simplifies access and avoids duplication, but needs careful management.
+
+- **Defined interfaces and communication**  
+  ▸ Services interact via well-defined interfaces.
+
+- **Domain-Driven design alignment**
+
+## 7. Principles of Event-Driven Architecture style
+
+- A highly decoupled, asynchronous software design style where components communicate by emitting and responding to events rather than making direct calls.
+
+### Principles
+- **Asynchronous communication**
+- **Decoupled components**
+- **High-performance**
+- **Highly scalable**
+- **Highly adaptable**
+
+## 8. Differences between Broker and Mediator topologies in Event-Driven Architecture
+
+- **Broker** is a simple, decentralized topology compared to **Mediator’s** centralized and coordinated approach.
+- Broker topology has no central control, while the Mediator controls the entire event workflow.
+- Broker is a looser coupler; events are more tightly coupled to the mediator.
+- Broker performance is higher compared to the Mediator.
+- Broker is a lightweight, parallel event-processing style, while the Mediator is for complex workflows with coordination and dependencies.
+
+## 9. When is hybrid event-driven architecture typically considered?
+
+A hybrid event-driven architecture is typically considered when:
+
+- There is a need to remove bottlenecks
+- There is a need for fault-tolerance and backpressure handling
+- There is a need to improve system scalability and responsiveness
+- There is a need for real-time processing
+
+## 10. What are the main principles of space-based architecture style?
+
+- Designed for systems with high scalability, elasticity, and concurrent user loads.  
+  Achieves this by eliminating traditional bottlenecks like centralized databases.
+
+### Principles
+- **In-memory data grids**  
+  ▸ Uses in-memory data grids instead of a central database.
+
+- **Processing units**  
+  ▸ Self-contained modules with application logic, in-memory data, replication engine.  
+  ▸ Deployed and scaled dynamically.
+
+- **Asynchronous persistence**  
+  ▸ Updates to the database are done asynchronously using data pumps and writers.  
+  ▸ Promotes eventual consistency.
+
+## 11. What are the main principles of microservices architecture style?
+
+- A distributed design style where the system is composed of many small, independent, and deployable services.  
+  Each service is focused on a specific business capability.
+
+### Principles
+- **Single responsibility / bounded contexts**  
+  ▸ Each service models a specific domain or business function.  
+  ▸ Services are functionally cohesive and operate within a bounded context.
+
+- **Independent deployment**  
+  ▸ Services are developed, deployed, and scaled independently.
+
+- **Decentralized data management**  
+  ▸ Each service has its own database (no shared schema).  
+  ▸ Enables data isolation and technology independence.
+
+- **Polyglot architecture**  
+  ▸ Services can be built using different languages or tools based on needs.
+
+- **Choreography over orchestration**  
+  ▸ Services coordinate through events, not centralized orchestration, to reduce coupling.
+
+- **High scalability and fault tolerance**  
+  ▸ Services can be independently scaled.  
+  ▸ Failures are isolated to prevent system-wide impact.
+
+## 12. What should be considered when selecting an architectural style?
+
+- Choosing an architecture style involves analyzing trade-offs across:
+  - Architecture characteristics
+  - Domain considerations
+  - Strategic goals
+  - System constraints
+
+### Key Factors
+- **Domain considerations** – How complex is the domain?
+- **Data architecture** – Centralized or decentralized?
+- **Communication style** – Use async where necessary; avoid unnecessary sync.
+- **Organizational structure** – Size and experience of the development team.
+- **Ecosystem and technology constraints**
+- **Evolution and change** – Anticipated system growth
+
+- Select architecture based on a holistic understanding of goals, constraints, and future needs — not a one-size-fits-all approach.
+
 **<h1>Software Modifiability</h1>**
 
+## 1. How modifiability can be measured?
 
-<h4><strong>How Modifiability Can Be Measured?</strong></h4>
+- **Coupling** – How strongly modules are related based on the number and nature of their relationship.  
+  ▸ Goal: Achieve loose coupling.
 
-<h4><strong>What Is Coupling, Cohesion, and Connascence?</strong></h4>
+- **Cohesion** – How strongly the responsibilities of a module are related.  
+  ▸ Goal: High cohesion.
 
-<h4><strong>General Software Design Principles</strong></h4>
+- **Connascence (co-existence)** – Degree to which a change in one module requires a change in another to maintain correctness.  
+  ▸ Goal: Reduce connascence to reduce cost of change.
 
-<h4><strong>What Concerns Are Typically Considered in Software Design? What Is Separation of Concerns?</strong></h4>
+## 2. What is coupling, cohesion, and connascence?
 
-<h4><strong>What Are the Main Principles of YAGNI?</strong></h4>
+- **Coupling** – Degree of interdependence between software modules.
 
-<h4><strong>What Are the Main Cohesion Principles?</strong></h4>
+- **Cohesion** – Degree to which elements inside a module belong together.
 
-<h4><strong>What Are the Main Coupling Principles?</strong></h4>
+- **Connascence** – Degree to which one component must change if another changes to maintain correctness.  
+  ▸ Reflects hidden dependencies and cost of change propagation.
 
-<h4><strong>What Are the SOLID Principles?</strong></h4>
+## 3. General software design principles
 
+- **Abstraction** – Simplify complexity by focusing on essential characteristics.
+- **Information hiding** – Hide internal details to reduce interdependency.
+- **Encapsulation** – Bundle data and methods together.
+- **Sufficiency** – Component includes necessary features for abstraction.
+- **Completeness** – Component includes all essential aspects.
+- **Primitiveness** – Use simple, easy-to-understand building blocks.
+- **Separation of concern** – Different parts should address different concerns.
 
-_________________________________________________________________________________________________________________________
+## 4. What concerns are typically considered in software design?
+
+- **Functional concerns** – What the system should do.
+- **Structural concerns** – How the system is organized and structured.
+
+## 5. What is separation of concerns?
+
+- **Separation of concerns** – Divide a system into parts, each addressing a distinct function or responsibility.
+
+## 6. What are the main principles of YAGNI?
+
+- **Build only what is needed** – Avoid speculative design.
+- **Simplify code and reduce bloat** – Easier maintenance.
+- **Deliver value faster** – Focus on current needs.
+- **Embrace change via refactoring** – Evolve design with actual requirements.
+
+## 7. What are the main cohesion principles?
+
+- **Reuse/release equivalence principle** – Reusable modules should be packaged and released together.
+- **Common closure principle** – A module should encapsulate related changes.
+- **Common reuse principle** – Group functions/classes that are reused together.
+
+## 8. What are the main coupling principles?
+
+- **Acyclic dependencies principle** – No circular dependencies.
+- **Stable dependency principle** – Depend only on stable components.
+- **Stable abstraction principle** – Stable components should be abstract and extensible.
+
+## 9. What are the SOLID principles?
+
+- A set of design guidelines on object-oriented programming that helps create more modular, maintainable, and scalable software.
+
+### Principles
+
+- **Single Responsibility Principle**  
+  ▸ A class/module should do only one thing and encapsulate only one area of responsibility.
+
+- **Open/Closed Principle**  
+  ▸ You should be able to extend behaviour without modifying existing code.
+
+- **Liskov Substitution Principle**  
+  ▸ Objects of a subclass should behave the same way as objects of their superclass.
+
+- **Interface Segregation Principle**  
+  ▸ Break large interfaces into smaller, more specific ones.  
+  ▸ Prevents classes from being forced to implement irrelevant functionality.
+
+- **Dependency Inversion Principle**  
+  ▸ Abstractions should not depend on details.  
+  ▸ Promotes loose coupling and supports testability.
+
 **<h1>Deployability</h1>**
 
+## 1. What is the cloud computing model?
 
-<h4><strong>What Is the Cloud Computing Model? What Perspectives Does It Cover?</strong></h4>
-<h4><strong>What Are the Possible Cloud Deployment Technology Options?</strong></h4>
-<h4><strong>What Is the Difference Between Virtualization vs Containerization?</strong></h4>
-<h4><strong>What Are the Common Types of &lt;Resource&gt;-as-a-Service? What Are the Differences Between Them?</strong></h4>
-<h4><strong>What Are the Common Cloud Deployment Models?</strong></h4>
-<h4><strong>What Are the Common Deployability Tactics?</strong></h4>
+Cloud computing is a model that provides on-demand access to computing resources (like servers, storage, and applications) over the internet. It is defined by five essential characteristics:
 
-_________________________________________________________________________________________________________________________
+- **On-demand self-service** – Users can provision resources automatically without human interaction.
+- **Broad network access** – Accessible from a wide range of devices via standard networks.
+- **Resource pooling** – Uses a multi-tenant model to dynamically allocate resources.
+- **Rapid elasticity** – Can scale resources up or down quickly as needed.
+- **Measured service** – Resource usage is monitored and billed accordingly.
+
+## 2. What perspective does cloud computing model cover?
+
+The cloud computing model covers the consumer-provider perspective, detailing how computing resources are provisioned, managed, and consumed. It defines:
+
+- **Service models** – What kind of services are provided and who manages what (IaaS, PaaS, SaaS, FaaS).
+- **Deployment models** – Where and how the infrastructure is deployed and who controls it (Public, Private, Hybrid, Community).
+- **Essential characteristics** – Operational behavior and expectations from both sides, like scalability and cost transparency.
+
+## 3. What are the possible cloud deployment technology options?  
+### What are the common types of `<Resource>`-as-a-Service?  
+### What are the differences between them?
+
+- **IaaS**
+  - **Bare metal** – Dedicated physical servers without virtualization.
+  - **VMs (Virtual Machines)** – Isolated environments using hypervisors.
+  - **Unikernels** – Specialized minimal OS images optimized for performance and security.
+  - **Containers** – Lightweight, portable environments sharing the host OS kernel.
+
+- **CaaS**
+  - Container deployment with options like:
+    - Build your own container services
+    - Off-the-shelf platforms
+    - Managed services (e.g., Kubernetes)
+
+- **PaaS**
+  - Provides middleware, language runtimes, and tools in pre-packaged environments for developers.
+
+- **FaaS / Serverless**
+  - Runs stateless code triggered by events without server management.
+
+- **SaaS**
+  - Fully managed applications accessible via the internet.
+
+## 4. What is the difference between virtualization vs containerization?
+
+### Virtualization
+- Uses a hypervisor to create and run multiple VMs on a single physical server.
+- Each VM includes a full OS, its own kernel, and virtualized hardware.
+- Offers strong isolation but has higher overhead due to full OS instances.
+
+### Containerization
+- Uses a shared OS kernel to run multiple containers in isolated user spaces.
+- Containers package only the app and its dependencies, not a full OS.
+- Offers lightweight, fast, and portable deployments with lower overhead than VMs.
+
+> **Use virtualization** when you need full OS isolation or run legacy systems.  
+> **Use containerization** for scalable, modular, modern deployments.
+
+## 5. What are the common cloud deployment models?
+
+- **Private cloud**  
+  ▸ Exclusive to a single organization  
+  ▸ Managed by the organization or a third party  
+  ▸ On-premises or off-premises  
+  ▸ High security, control, and regulatory compliance
+
+- **Community cloud**  
+  ▸ Shared by organizations with common goals or requirements  
+  ▸ Managed by one or more organizations or a third party  
+  ▸ On-premises or off-premises  
+  ▸ Suited for collaborative projects or shared concerns
+
+- **Public cloud**  
+  ▸ Open to the public  
+  ▸ Managed and hosted by cloud providers  
+  ▸ Providers use their data centers  
+  ▸ Scalability, cost-efficiency, low entry barriers
+
+- **Hybrid cloud**  
+  ▸ Combination of two or more cloud types  
+  ▸ Integrated for workload portability  
+  ▸ Balances control with scalability, supports cloud bursting or disaster recovery
+
+- **Multi-cloud**  
+  ▸ Use of multiple cloud providers  
+  ▸ May or may not be integrated  
+  ▸ Vendor independence, best-of-breed services, increased availability
+
+## 6. What are the common deployability tactics?
+
+### Manage Deployment Pipeline
+- **Scale rollouts** – Gradually deploy to subsets of users, monitor, and rollback if needed  
+- **Rollback** – Revert to a previous version automatically on failure  
+- **Script deployment commands** – Automate complex deployments using version-controlled scripts
+
+### Manage Deployed System
+- **Service interactions** – Handle compatibility across different versions during rollout  
+- **Package dependencies** – Bundle apps with required dependencies  
+- **Feature toggle** – Enable/disable features at runtime without redeployment
+
 **<h1>Integrability</h1>**
 
+## 1. What is the common module/service integration styles?
 
-<h4><strong>What Are the Common Module/Service Integration Styles?</strong></h4>
+- **File transfer** – Modules exchange files with shared data.  
+  ▸ Can be manual, automatic, or hybrid. It is slow.
 
-<h4><strong>What Is API? What Different Styles of API Do You Know?</strong></h4>
+- **Shared database** – Modules use the same database.  
+  ▸ Offers consistent data but leads to very high coupling.
 
-<h4><strong>What Is REST API? What Properties Does It Possess? What Are the REST API Maturity Levels?</strong></h4>
+- **Invocation (local method call)** – Modules expose functionality via direct calls.  
+  ▸ Requires encapsulation and may need anti-corruption layers.  
+  ▸ Synchronous and tightly coupled.
 
-<h4><strong>How to Ensure Asynchronicity in REST API Design?</strong></h4>
+- **Messaging** – Modules exchange events via a message broker.  
+  ▸ Promotes loose coupling and eventual consistency, but adds complexity.
 
-<h4><strong>What Is Message-Based Communication?</strong></h4>
+- **Integration events** – Used to inform other modules/bounded contexts that an event has occurred.  
+  ▸ Consumers process events independently.
 
-<h4><strong>What Is the Purpose of Different Messaging Patterns? Provide Some Examples of Messaging Patterns?</strong></h4>
+## 2. What is API?
 
-<h4><strong>How Sync/Async APIs Can Be Documented?</strong></h4>
+An API (Application Programming Interface) is a set of rules and mechanisms that allows applications to exchange data and functionality remotely, simplifying development and enhancement.
 
+### Properties
+- **Consumer-centric** – Designed from the perspective of the consumer.
+- **Atomic** – Each API call does one thing on one object.
+- **Support service evolution** – APIs can evolve without breaking clients.
+- **Platform independent** – Any client can call the API regardless of implementation.
+- **Simple and intuitive** – Easy to understand and predict.
+- **Well-documented** – Clear documentation.
+- **Forgiving** – Returns understandable error messages.
+- **Secure and compliant** – Proper access control, no data leakage.
+- **Performant, scalable, available** – Ensures fast, reliable responses.
+- **Reusable and backward-compatible** – Supports multiple clients and versions.
 
-_________________________________________________________________________________________________________________________
+## 3. What different styles of API do you know?
+
+- **REST (Representational State Transfer)**  
+  ▸ Resource-based, uses standard HTTP verbs (GET, POST, PUT, DELETE)  
+  ▸ Stateless, uses caching, uniform interface
+
+- **SOAP (Simple Object Access Protocol)**  
+  ▸ XML-based protocol with strict structure (envelope, rules, conventions)  
+  ▸ Extensible, platform-independent, protocol-neutral  
+  ▸ Heavier and more complex than REST
+
+- **RPC (Remote Procedure Call)**  
+  ▸ Executes functions remotely like local functions  
+  ▸ Includes XML-RPC, JSON-RPC, gRPC  
+  ▸ gRPC uses protocol buffers, supports streaming & advanced features
+
+- **OData (Open Data Protocol)**  
+  ▸ REST-based, standard for querying and updating data via URLs  
+  ▸ Supports filtering, sorting, pagination, projection, batch operations
+
+- **GraphQL**  
+  ▸ Query language for APIs  
+  ▸ Clients request only the exact data needed (efficient)  
+  ▸ Supports query, mutation, and subscription operations
+
+## 4. What is REST API?
+
+A REST API is an architectural style for building distributed systems where resources (data or services) are accessed and manipulated using standard HTTP methods.
+
+## 5. What properties does REST API possess?
+
+- **Resource-oriented** – Everything is treated as a resource.
+- **Stateless** – Each request contains all information needed; no server-side session state.
+- **Uniform interface** – Standard methods like GET, POST, PUT, PATCH, DELETE.
+- **Client-server separation** – Frontend and backend are clearly separated.
+- **Cacheable** – Responses must define cache-ability to improve performance.
+
+## 6. What are the REST API maturity levels?
+
+### Level 0
+- Single endpoint.
+- All operations use a single method like POST.
+- Essentially a remote procedure call over HTTP.
+
+### Level 1
+- API is broken into multiple URIs, each representing a resource.
+- Still uses a single HTTP method for all actions.
+
+### Level 2
+- Uses standard HTTP methods (GET, POST, etc.).
+- Enables semantic clarity and aligns with HTTP conventions.
+
+### Level 3 – HATEOAS (Hypermedia As The Engine Of Application State)
+- Responses include hyperlinks to guide clients on next available actions.
+- Promotes discoverability and loose coupling.
+
 **<h1>Usability</h1>**
 
 
