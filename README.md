@@ -1,8 +1,7 @@
 **<h1>Domain Driven Design</h1>**
 
-**<h4>What is DDD? What issues it attempts to solve, what values does it provide, and what are the main principles of DDD?</h4>**
-
-Domain Driven Design – an approach to software development enabling teams to more effectively manage the construction and maintenance of software for complex problem domains!
+### **1. What is DDD?**
+An approach to software development enabling teams to more effectively manage the construction and maintenance of software for complex problem domains.
 
 Solves issues:
 cost centric vs profit centric view on development process
