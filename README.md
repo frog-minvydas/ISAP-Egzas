@@ -3,16 +3,36 @@
 ### **1. What is DDD?**
 An approach to software development enabling teams to more effectively manage the construction and maintenance of software for complex problem domains.
 
-Solves issues:
-cost centric vs profit centric view on development process
-solving problems using technology rather than careful thought and design
-database is given too much priority
-improper naming of objects and operations
-too fast delivery -> lower quality -> big ball of mud
-business logic in user interface components and persistence components
-broken, slow, and locking database queries 
-wrong abstractions
-strongly coupled services
+## 2. What is Big Ball of Mud?
+- Is a haphazardly structured, sprawling, sloppy, duct-tape-and-baling-wire, spaghetti-code system that **lacks a perceivable architecture**.
+
+## 3. What issues does DDD attempt to solve?
+- **Cost-centric vs Profit-centric development**  
+  ▸ Projects often prioritize minimizing costs rather than maximizing long-term value.
+
+- **Technology-First mentality**  
+  ▸ Solutions are driven by technology rather than a deep understanding of the domain and its needs.
+
+- **Database-Centric thinking**  
+  ▸ Overemphasis is placed on database design rather than modelling the domain properly.
+
+- **Improper naming**  
+  ▸ Poor naming of objects and operations leads to misunderstanding and miscommunication across the team.
+
+- **Rushed delivery leads to poor quality**  
+  ▸ Fast delivery often sacrifices design quality, which leads to fragile systems.
+
+- **Business logic spread across UI and persistence layers**  
+  ▸ Violating separation of concerns, making systems hard to change and understand.
+
+- **Inefficient database operations**  
+  ▸ Queries that are slow, poorly optimised, or lock unnecessarily.
+
+- **Wrong abstractions**  
+  ▸ Misrepresentation of business logic results in models that don’t reflect reality.
+
+- **Tight coupling between services**  
+  ▸ Strong dependencies between modules hinder scalability and flexibility.
 
 Values:
 
